@@ -1,0 +1,42 @@
+<template>
+  <h1>Inventory Details</h1>
+  <hr/>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Inventory creation time
+            </th>
+            <th>
+              Products in inventory
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${inventory.description}
+            </td>
+            <td>
+              ${inventory.dateString}
+            </td>
+            <td>
+              ${inventory.productCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: inventorysIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="inventory != null" route-href="route: inventorysEdit; params.bind: {id: inventory.id}">Edit Inventory <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+</template>

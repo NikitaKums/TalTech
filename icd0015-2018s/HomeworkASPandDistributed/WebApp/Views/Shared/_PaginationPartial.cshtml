@@ -1,0 +1,30 @@
+<div class="float-right">
+
+    <div class="dataTables_paginate paging_simple_numbers">
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <ul class="pagination">
+            <li class="paginate_button page-item previous @prevDisabled">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="page-link">
+                    @Resources.Views.Common.Previous
+                </a>
+            </li>
+            <li class="paginate_button page-item next @nextDisabled">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="page-link">
+                    @Resources.Views.Common.Next
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

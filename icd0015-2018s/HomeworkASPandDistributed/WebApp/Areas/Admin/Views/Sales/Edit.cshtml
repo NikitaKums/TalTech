@@ -1,0 +1,53 @@
+@model SaleCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Edit;
+}
+
+<h1>@Resources.Views.Common.Edit @Resources.Domain.Sale.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.Edit @Resources.Domain.Sale.Header</h3>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Sale.Description" class="control-label"></label>
+                        <input asp-for="Sale.Description" class="form-control"/>
+                        <span asp-validation-for="Sale.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sale.SaleInitialCreationTime" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Sale.SaleInitialCreationTime" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="Sale.SaleInitialCreationTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sale.AppUser" class="control-label"></label>
+                        <select asp-for="Sale.AppUserId" class="form-control select-auto-complete" asp-items="Model.AppUserSelectList"></select>
+                        <span asp-validation-for="Sale.AppUserId" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="Sale.Id"/>
+                    <button type="submit" class="btn bg-success float-right">
+                        @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+                    </button>
+                    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,89 @@
+@model IEnumerable<Domain.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<partial name="_SearchPartial"/>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delivery)
+        </th>
+        <th>
+            Pizza(s)
+        </th>
+        <th>
+            Drink(s)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Delivery.DeliveryService)
+            </td>
+            <td>
+                @if (item.PizzasInOrder.Count == 0)
+                {
+                    <p>----</p>
+                }
+                else
+                {
+                    foreach (var pizzasInOrder in item.PizzasInOrder)
+                    {
+                        <a asp-action="Details" asp-route-id="@pizzasInOrder.Id" asp-controller="PizzasInOrder">@pizzasInOrder.Pizza.Description</a><br/>
+                    }
+                }
+            </td>
+            <td>
+                @if (item.DrinksInOrder.Count == 0)
+                {
+                    <p>----</p>
+                }
+                else
+                {
+                    foreach (var drinksInOrder in item.DrinksInOrder)
+                    {
+                        <a asp-action="Details" asp-route-id="@drinksInOrder.Id" asp-controller="DrinksInOrder">@drinksInOrder.Drink.Description</a><br/>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a><br/>
+                <a asp-action="Create" asp-controller="DrinksInOrder" asp-route-id="@item.Id">Add drink to order</a> |
+                <a asp-action="Create" asp-controller="PizzasInOrder" asp-route-id="@item.Id">Add pizza to order</a> |
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

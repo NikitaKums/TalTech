@@ -1,0 +1,159 @@
+<template>
+  <h1>Product Details</h1>
+  <hr/>
+  <div>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Manufacturer item code
+            </th>
+            <th>
+              Shop code
+            </th>
+            <th>
+              Product name
+            </th>
+            <th>
+              Buy price
+            </th>
+            <th>
+              Percentage added to buy price
+            </th>
+            <th>
+              Sell price
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Weight
+            </th>
+            <th>
+              Length
+            </th>
+            <th>
+              Manufacturer
+            </th>
+            <th>
+              Inventory
+            </th>
+            <th>
+              Shop
+            </th>
+            <th>
+              Amount ordered
+            </th>
+            <th>
+              Amount sold
+            </th>
+            <th>
+              Return issues
+            </th>
+            <th>
+              Defect issues
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${product.manuFacturerItemCode}
+            </td>
+            <td>
+              ${product.shopCode}
+            </td>
+            <td>
+              ${product.productName}
+            </td>
+            <td>
+              ${product.buyPrice}
+            </td>
+            <td>
+              ${product.percentageAddedToBuyPrice}
+            </td>
+            <td>
+              ${product.sellPrice}
+            </td>
+            <td>
+              ${product.quantity}
+            </td>
+            <td>
+              ${product.weight}
+            </td>
+            <td>
+              ${product.length}
+            </td>
+            <td>
+              ${product.manuFacturerName}
+            </td>
+            <td>
+              ${product.inventoryName}
+            </td>
+            <td>
+              ${product.shopName}
+            </td>
+            <td>
+              ${product.productsInOrdersCount}
+            </td>
+            <td>
+              ${product.productsSoldCount}
+            </td>
+            <td>
+              ${product.productReturnsCount}
+            </td>
+            <td>
+              ${product.productsWithDefectCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Categories
+            </th>
+            <th>
+              Comments
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td if.bind="product.categoryDTOs[0].categoryName != undefined">
+              <span repeat.for="category of product.categoryDTOs">
+                ${category.categoryName}<br>
+              </span>
+            </td>
+            <td if.bind="product.categoryDTOs[0].categoryName == undefined">
+              ---
+            </td>
+            <td if.bind="product.commentDTOs[0].commentTitle != undefined">
+              <span repeat.for="comment of product.commentDTOs">
+               <strong> ${comment.commentTitle} </strong> <br>
+                        ${comment.commentBody}<br>
+              </span>
+            </td>
+            <td if.bind="product.commentDTOs[0].commentTitle == undefined">
+              ---
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: productsIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="product != null" route-href="route: productsEdit; params.bind: {id: product.id}">Edit Product <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+
+</template>

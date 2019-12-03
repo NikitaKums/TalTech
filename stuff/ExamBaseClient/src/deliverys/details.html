@@ -1,0 +1,33 @@
+<template>
+  <h1>Details</h1>
+
+  <div>
+    <h4>Delivery</h4>
+    <hr />
+    <dl class="row">
+      <dt class = "col-sm-2">
+        DeliveryService
+      </dt>
+      <dd class = "col-sm-10">
+        ${delivery.deliveryService}
+      </dd>
+      <dt class = "col-sm-2">
+        Description
+      </dt>
+      <dd class = "col-sm-10">
+        ${delivery.description}
+      </dd>
+      <dt class = "col-sm-2">
+        DeliveryPrice
+      </dt>
+      <dd class = "col-sm-10">
+        ${delivery.deliveryPrice}
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <a if.bind="delivery.id != undefined" route-href="route: deliverysEdit; params.bind: {id: delivery.id}">Edit</a> |
+    <a route-href="route: deliverysIndex">Back to List</a>
+  </div>
+
+</template>

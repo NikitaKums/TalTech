@@ -1,0 +1,6 @@
+# IDEA Specific
+.idea
+tdd-practice.iml
+
+# Project specific
+target

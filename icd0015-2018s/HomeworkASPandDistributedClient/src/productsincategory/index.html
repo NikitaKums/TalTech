@@ -1,0 +1,47 @@
+<template>
+  <h1>ProductInCategory Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productsincategoryCreate" if.bind="productsInCategory[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productsincategoryCreate" if.bind="productsInCategory[0].id == undefined">Create New</a>
+  </div>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Product
+          </th>
+          <th>
+            Category
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsInCategory[0].id != undefined">
+        <tr repeat.for="productInCategory of productsInCategory">
+          <td>
+            ${productInCategory.productName}
+          </td>
+          <td>
+            ${productInCategory.categoryName}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productsincategoryEdit; params.bind: {id: productInCategory.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: productsincategoryDetails; params.bind: {id: productInCategory.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: productsincategoryDelete; params.bind: {id: productInCategory.id}">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>

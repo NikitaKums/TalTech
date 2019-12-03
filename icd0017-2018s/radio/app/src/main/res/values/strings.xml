@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Radio2019</string>
+    <string name="Statistics">Statistics</string>
+    <string name="Back">Back</string>
+    <string name="Radio">Radio</string>
+    <string name="From">From</string>
+    <string name="To">To</string>
+    <string name="Search">Search</string>
+    <string name="TotalUniqueArtists">Total Unique Artists:</string>
+    <string name="TotalUniqueSongs">Total Unique Songs:</string>
+    <string name="Minus">Minus</string>
+    <string name="Plus">Plus</string>
+    <string name="Play">PLAY</string>
+
+
+</resources>

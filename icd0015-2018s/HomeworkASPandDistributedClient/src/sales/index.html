@@ -1,0 +1,112 @@
+<template>
+  <div>
+    <h1>Sale Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: salesCreate" if.bind="user.shopId != undefined">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: salesCreate" if.bind="user.shopId == undefined">Create New</a>  
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+  </div>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Sale initial creation time
+            </th>
+            <th>
+              User
+            </th>
+            <th>
+              Products sold count
+            </th>
+            <th>
+              Products sold
+            </th>
+            <th>
+              Total
+            </th>
+            <th>
+              Current day
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="sales[0].id != undefined">
+          <tr repeat.for="sale of sales">
+            <td>
+              ${sale.description}
+            </td>
+            <td>
+              ${sale.dateString}
+            </td>
+            <td>
+              ${sale.appUserName} ${sale.appUserLastName}
+            </td>
+            <td>
+              <a route-href="route: salesDetails; params.bind: {id: sale.id}">${sale.productsSoldCount}</a>
+            </td>
+            <td if.bind="sale.productsInSaleDTOs[0].productName != undefined">
+              ${sale.productsInSaleDTOs[0].productName}<br>
+              <small if.bind="sale.productsInSaleDTOs.length > 1">
+                See
+                <a route-href="route: salesDetails; params.bind: {id: sale.id}"> details </a>
+                for more</small>
+            </td>
+            <td if.bind="sale.productsInSaleDTOs[0].productName == undefined">
+              ---
+            </td>
+            <td>
+              $${sale.allTotalSaleAmount}
+            </td>
+            <td>
+              $${sale.todayTotalSaleAmount}
+            </td>
+            <td>
+              <a route-href="route: productssoldCreate; params.bind: {id: sale.id}" class="btn bg-warning btn-extra">
+                <i class="nav-icon fa fa-plus"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: salesDetails; params.bind: {id: sale.id}" if.bind="sale != null">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-success btn-extra" route-href="route: salesEdit; params.bind: {id: sale.id}" if.bind="sale != null">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: salesDelete; params.bind: {id: sale.id}" if.bind="sale != null && sale.productsSoldCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: salesDelete; params.bind: {id: sale.id}" if.bind="sale != null && sale.productsSoldCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr/>
+      <div>
+        <div class="float-right">
+          <strong>All total:</strong>
+          $${overAllTotalSaleAmount}<br/>
+          <strong>Today total:</strong>
+          $${todayOverAllTotalSaleAmount}
+        </div>
+      </div>
+    </div>
+  <compose view="../pagination_partial.html"></compose>
+</template>

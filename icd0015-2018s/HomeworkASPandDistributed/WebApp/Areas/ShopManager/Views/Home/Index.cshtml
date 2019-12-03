@@ -1,0 +1,62 @@
+﻿@model WebApp.Models.HomeCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Shared._Layout.LayoutHome;
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Resources.Views.Shared._Layout.LayoutWelcome <strong>ShopApp</strong> @Resources.Views.Shared._Layout.LayoutManager!</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <!-- small card -->
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>@Model.OrderCount</h3>
+
+                <p>@Resources.Views.Shared._Layout.LayoutOrder</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <a asp-area="ShopManager" asp-controller="Orders" asp-action="Index" class="small-box-footer">
+                @Resources.Views.Shared._Layout.LayoutMoreInfo <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <!-- small card -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>@Model.UserCount</h3>
+
+                <p>@Resources.Views.Shared._Layout.LayoutUsers</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user-plus"></i>
+            </div>
+            <a asp-area="ShopManager" asp-controller="Users" asp-action="Index" class="small-box-footer">
+                @Resources.Views.Shared._Layout.LayoutMoreInfo <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <!-- small card -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>@Model.ProductCount</h3>
+
+                <p>@Resources.Views.Shared._Layout.LayoutProduct</p>
+            </div>
+            <div class="icon">
+                <i class="fa fa-barcode"></i>
+            </div>
+            <a asp-area="ShopManager" asp-controller="Products" asp-action="Index" class="small-box-footer">
+                @Resources.Views.Shared._Layout.LayoutMoreInfo <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    
+</div>

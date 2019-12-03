@@ -1,0 +1,71 @@
+@model BLL.App.DTO.DomainLikeDTO.Category
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Details;
+}
+
+<h1>@Resources.Domain.Category.Header @Resources.Views.Common.Details</h1>
+<hr />
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CategoryName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shop)
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Shop.ShopName)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn bg-success">@Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i></a>
+    </div>
+    <hr/>
+        <div class="card">
+            <div class="card-body table-responsive p-0">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            @Resources.Domain.Order.ProductName
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.ProductsInCategory)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">
+                                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="ProductsInCategory" asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra"><i class="nav-icon fa fa-pencil"></i></a>
+                                <a asp-controller="ProductsInCategory" asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra"><i class="nav-icon fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,28 @@
+<template>
+  <h1>Create Defect</h1>
+  <hr/>
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new Defect</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Defect_Description">Description</label>
+              <input class="form-control" type="text" id="Defect_Description" name="Defect.Description" value.bind="defect.description"  />
+            </div>
+            <div class="form-group" if.bind="appUser.shopId != undefined">
+              <span><strong>Your shop:</strong> ${appUser.shopName}</span>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create</button>
+            <a class="btn btn-default" route-href="route: defectsIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

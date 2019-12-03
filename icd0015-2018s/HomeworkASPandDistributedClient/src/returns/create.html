@@ -1,0 +1,27 @@
+<template>
+  <h1>Create Return</h1>
+  <hr/>
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new Return</h3>
+        </div>
+        <form submit.delegate="submit()" method="post">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Return_Description">Description</label>
+              <input class="form-control" type="text" id="Return_Description" value.bind="return.description" />
+            </div>
+            <div class="form-group">
+              <span>Creating for shop: <strong>${shop.shopName}</strong></span>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create Return</button>
+            <a class="btn btn-default" route-href="returnsIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

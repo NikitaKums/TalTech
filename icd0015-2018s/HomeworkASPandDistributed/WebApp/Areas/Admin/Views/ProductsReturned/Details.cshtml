@@ -1,0 +1,54 @@
+@model BLL.App.DTO.DomainLikeDTO.ProductReturned
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Details;
+}
+
+<h1>@Resources.Domain.ProductReturned.Header @Resources.Views.Common.Details</h1>
+<hr/>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductReturnedTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Product)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Return)
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ProductReturnedTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Product.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Return.Description)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn bg-success">
+            @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+        </a>
+    </div>
+</div>

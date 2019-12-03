@@ -1,0 +1,68 @@
+<template>
+  <div>
+    <h1>Category Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: categoriesCreate" if.bind="categories != null && categories.length > 0">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: categoriesCreate" if.bind="categories.length < 1 || categories == null || categories[0].id == undefined">Create New</a>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Category name
+            </th>
+            <th>
+              Products in category
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="categories.length > 0">
+          <tr repeat.for="category of categories">
+            <td>
+              ${category.categoryName}
+            </td>
+            <td>
+              <a route-href="route: categoriesDetails; params.bind: {id: category.id}">${category.categoryProductCount}</a>
+            </td>
+            <td>
+              <a class="btn bg-warning btn-extra" route-href="route: productsincategoryCreate; params.bind: {id: category.id}">
+                <i class="nav-icon fa fa-plus"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: categoriesDetails; params.bind: {id: category.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-success btn-extra" route-href="route: categoriesEdit; params.bind: {id: category.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: categoriesDelete; params.bind: {id: category.id}" if.bind="category != null && category.categoryProductCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: categoriesDelete; params.bind: {id: category.id}" if.bind="category != null && category.categoryProductCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+</template>

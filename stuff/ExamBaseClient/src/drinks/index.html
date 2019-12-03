@@ -1,0 +1,47 @@
+<template>
+  <h1>Index</h1>
+
+  <p>
+    <a class="btn btn-success"  route-href="route: drinksCreate">Create New</a>
+  </p>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Description
+      </th>
+      <th>
+        Price
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="drink of drinks">
+      <td>
+        ${drink.description}
+      </td>
+      <td>
+        ${drink.pirce}
+      </td>
+      <td>
+        <a route-href="route: drinksEdit; params.bind: {id: drink.id}">Edit</a> |
+        <a route-href="route: drinksDetails; params.bind: {id: drink.id}">Details</a> |
+        <a route-href="route: drinksDelete; params.bind: {id: drink.id}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</template>

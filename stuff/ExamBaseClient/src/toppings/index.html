@@ -1,0 +1,49 @@
+<template>
+
+  <h1>Index</h1>
+
+  <p>
+    <a class="btn btn-success"  route-href="route: toppingsCreate">Create New</a>
+  </p>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Description
+      </th>
+      <th>
+        Price
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="topping of toppings">
+      <td>
+        ${topping.description}
+      </td>
+      <td>
+        ${topping.pirce}
+      </td>
+      <td>
+        <a route-href="route: toppingsEdit; params.bind: {id: topping.id}">Edit</a> |
+        <a route-href="route: toppingsDetails; params.bind: {id: topping.id}">Details</a> |
+        <a route-href="route: toppingsDelete; params.bind: {id: topping.id}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</template>

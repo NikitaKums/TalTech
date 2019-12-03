@@ -1,0 +1,91 @@
+<template>
+  <div>
+    <h1>Shops Index</h1>
+    <hr />
+    <div class="create-button-div">
+     <!-- <a class="btn btn-block btn-warning disabled" route-href="route: shopsCreate" if.bind="shop.id != undefined">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: shopsCreate" if.bind="shop.id == undefined">Create New</a> -->
+      <a class="btn btn-block btn-warning disabled" route-href="route: shopsCreate">Create New</a>
+    </div>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Shop name
+            </th>
+            <th>
+              Shop address
+            </th>
+            <th>
+              Shop contact
+            </th>
+            <th>
+              Shop contact2
+            </th>
+            <th>
+              Orders amount
+            </th>
+            <th>
+              Products count
+            </th>
+            <th>
+              Returns count
+            </th>
+            <th>
+              Defects count
+            </th>
+            <th>
+              Users count
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="shop.id != undefined">
+          <tr>
+            <td>
+              ${shop.shopName} 
+            </td>
+            <td>
+              ${shop.shopAddress}
+            </td>
+            <td>
+              ${shop.shopContact}
+            </td>
+            <td>
+              ${shop.shopContact2}
+            </td>
+            <td>
+              ${shop.ordersCount}
+            </td>
+            <td>
+              ${shop.productsCount}
+            </td>
+            <td>
+              ${shop.returnsCount}
+            </td>
+            <td>
+              ${shop.defectsCount}
+            </td>
+            <td>
+              ${shop.appUsersCount}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra disabled" route-href="route: shopsEdit; params.bind: {id: shop.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: shopsDetails; params.bind: {id: shop.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: shopsDelete; params.bind: {id: shop.id}">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

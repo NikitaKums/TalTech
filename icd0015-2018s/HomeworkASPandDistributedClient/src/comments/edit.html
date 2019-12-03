@@ -1,0 +1,36 @@
+<template>
+  <require from="select2-custom-attribute"></require>
+  <h1>Edit Comment</h1>
+  <hr />
+  <div>
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Comment</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="control-label" for="Comment_CommentTitle">Comment title</label>
+              <input class="form-control" type="text" id="Comment_CommentTitle" value.bind="comment.commentTitle" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Comment_CommentBody">Comment body</label>
+              <input class="form-control" type="text" id="Comment_CommentBody" value.bind="comment.commentBody" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Comment_Product">Product</label>
+              <select select2 class="form-control" value.bind="comment.productId" id="Comment_Product">
+                <option repeat.for="product of products" model.bind="product.id">
+                  ${product.productName}
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Comment <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" route-href="route: commentsIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

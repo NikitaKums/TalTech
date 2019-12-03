@@ -1,0 +1,71 @@
+@page
+@using Domain.Boards
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@model PlaceShipsModel
+@{
+    ViewData["Title"] = "Place Ships";
+}
+@{
+    var playGameModel = new PlayGameModel();
+    var letters = playGameModel.GetLettersForWebBoard();
+}
+<form method="post">
+    <table class="game">
+        <tr>
+            @for (var i = 0; i < @Model.Player.GamingBoard.BoardSize; i++)
+            {
+                if (i == 0)
+                {
+                    <td class="coordinates game"></td>
+                }
+                <td class="coordinates game">@letters[i]</td>
+            }
+        </tr>
+        @for (var i = 0; i < @Model.Player.GamingBoard.BoardSize; i++)
+        {
+            <tr>
+                <td class="coordinates game">
+                    @i
+                </td>
+                @for (var j = 0; j < @Model.Player.GamingBoard.BoardSize; j++)
+                {
+                    var symbolForWebBoard = playGameModel.GetSymbolsForWebBoard(@Model.Player.GamingBoard[i, j]);
+                    if (Model.Player.GamingBoard[i, j].Equals(BoardSquareState.Water))
+                    {
+                        <td>
+                            <input type="checkbox" name="coordinates" value="@i!@j"/>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="game">@symbolForWebBoard</td>
+
+                    }
+                }
+            </tr>
+        }
+    </table>
+    @if (!Model.ShipsToPlace.Contains(" "))
+    {
+        <label>
+            <span>Ships that can be placed:
+                @foreach (var ship in @Model.ShipsToPlace)
+                {
+                    <br/>
+                    @ship
+                }
+            </span>
+        </label>
+        <br/>
+        <span class="alert-danger" asp-validation-for="Error"></span>
+        <br/>
+        <input type="submit" name="submit" class="btn" value="Place ship" id="PlaceShip"/>
+    }
+    else
+    {
+        <span class="alert-danger">All ships have been placed</span>
+        <br/>
+        <input type="submit" name="submit" class="btn" value="Continue" id="Continue"/>
+    }
+    <input type="hidden" asp-for="Index" value="@Model.Index"/>
+</form>

@@ -1,0 +1,58 @@
+@model ProductReturnedCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Edit;
+}
+
+<h1>@Resources.Views.Common.Edit @Resources.Domain.ProductReturned.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.Edit @Resources.Domain.ProductReturned.Header</h3>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ProductReturned.Quantity" class="control-label"></label>
+                        <input asp-for="ProductReturned.Quantity" class="form-control"/>
+                        <span asp-validation-for="ProductReturned.Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductReturned.ProductReturnedTime" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input asp-for="ProductReturned.ProductReturnedTime" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="ProductReturned.ProductReturnedTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductReturned.Product" class="control-label"></label>
+                        <select asp-for="ProductReturned.ProductId" class="form-control select-auto-complete" asp-items="Model.ProductSelectList"></select>
+                        <span asp-validation-for="ProductReturned.ProductId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductReturned.Return" class="control-label"></label>
+                        <select asp-for="ProductReturned.ReturnId" class="form-control select-auto-complete" asp-items="Model.ReturnSelectList"></select>
+                        <span asp-validation-for="ProductReturned.ReturnId" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="ProductReturned.Id"/>
+                    <button type="submit" class="btn bg-success float-right">
+                        @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+                    </button>
+                    <a asp-action="Details" asp-route-id="@Model.ProductReturned.ReturnId"  asp-controller="Returns" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

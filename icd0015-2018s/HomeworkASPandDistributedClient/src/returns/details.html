@@ -1,0 +1,81 @@
+<template>
+  <h1>Return Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Products in return
+            </th>
+            <th>
+              Shop
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${return.description}
+            </td>
+            <td>
+              ${return.productsReturnedCount}
+            </td>
+            <td>
+              ${return.shopName}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: returnsIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="return != null" route-href="route: returnsEdit; params.bind: {id: return.id}">Edit Return <i class="fa fa-pencil"></i></a>
+    </div>
+    <hr/>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Product
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product returned time
+            </th>
+          </tr>
+          </thead>
+          <tbody if.bind="productsReturned[0].id != undefined">
+          <tr repeat.for="productReturned of productsReturned">
+            <td>
+              <a route-href="route: productsDetails; params.bind: {id: productReturned.productId}">
+                ${productReturned.productName}
+              </a>
+            </td>
+            <td>
+              ${productReturned.quantity}
+            </td>
+            <td>
+              ${productReturned.dateString}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: productsreturnedEdit; params.bind: {id: productReturned.id}"><i class="nav-icon fa fa-pencil"></i></a>
+              <a class="btn bg-danger btn-extra" route-href="route: productsreturnedDelete; params.bind: {id: productReturned.id}"><i class="nav-icon fa fa-trash"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

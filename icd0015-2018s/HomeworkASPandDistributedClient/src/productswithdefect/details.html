@@ -1,0 +1,49 @@
+<template>
+  <h1>Product Wih Defect Details</h1>
+  <hr/>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Defect recording time
+            </th>
+            <th>
+              Product
+            </th>
+            <th>
+              Defect
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${productWithDefect.quantity}
+            </td>
+            <td>
+              ${productWithDefect.dateString}
+            </td>
+            <td>
+              <a if.bind="productWithDefect != undefined" route-href="route: productsDetails; params.bind: {id: productWithDefect.productId}">${productWithDefect.productName}</a>
+            </td>
+            <td>
+              <a if.bind="productWithDefect != undefined" route-href="route: defectsDetails; params.bind: {id: productWithDefect.defectId}">${productWithDefect.defectDescription}</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: productswithdefectIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="productWithDefect != null" route-href="route: productswithdefectEdit; params.bind: {id: productWithDefect.id}">Edit Product with Defect <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

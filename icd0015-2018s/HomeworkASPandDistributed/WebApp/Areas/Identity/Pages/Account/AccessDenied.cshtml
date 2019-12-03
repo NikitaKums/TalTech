@@ -1,0 +1,11 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = @Resources.Identity.AccountManage.AccessDenied;
+}
+<div class="error-page">
+    <div class="error-content">
+        <h1><i class="fa fa-warning text-danger"></i> @ViewData["Title"] !</h1>
+        <h3>@Resources.Identity.AccountManage.NoAccesToResource</h3>
+    </div>
+</div>

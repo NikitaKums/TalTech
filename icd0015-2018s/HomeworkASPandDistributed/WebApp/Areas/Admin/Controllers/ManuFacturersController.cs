@@ -1,0 +1,167 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Contracts.BLL.App;
+using Contracts.DAL.App;
+using DAL.App.EF;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Domain;
+using Microsoft.AspNetCore.Authorization;
+using WebApp.Models;
+
+namespace WebApp.Areas.Admin.Controllers
+{
+    [Authorize(Roles = "Admin")] 
+    [Area("Admin")]
+    public class ManuFacturersController : Controller
+    {
+        private readonly IAppBLL _bll;
+
+        public ManuFacturersController(IAppBLL bll)
+        {
+            _bll = bll;
+        }
+
+
+        // GET: ManuFacturers
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
+        {
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParam"] = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["AddressSortParam"] = sortOrder == "address" ? "address_desc" : "address";
+            ViewData["NumberSortParam"] = sortOrder == "number" ? "number_desc" : "number";
+            
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+            
+            var manuFacturer = await _bll.ManuFacturers.AllAsync(sortOrder, searchString, pageNumber ?? 1, 10);
+
+            return View(PaginatedList<BLL.App.DTO.DomainLikeDTO.ManuFacturer>.Create(manuFacturer, pageNumber ?? 1, 10, 
+                await _bll.ManuFacturers.CountDataAmount(null, searchString)));
+        }
+
+        // GET: ManuFacturers/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var manuFacturer = await _bll.ManuFacturers.FindAsync(id);
+                
+            if (manuFacturer == null)
+            {
+                return NotFound();
+            }
+
+            return View(manuFacturer);
+        }
+
+        // GET: ManuFacturers/Create
+        public IActionResult Create()
+        {
+            return View(new ManuFacturerCreateViewModel());
+        }
+
+        // POST: ManuFacturers/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ManuFacturerCreateViewModel vm)
+        {
+            if (ModelState.IsValid)
+            {
+                await _bll.ManuFacturers.AddAsync(vm.ManuFacturer);
+                await _bll.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View(vm);
+        }
+
+        // GET: ManuFacturers/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var manuFacturer = await _bll.ManuFacturers.FindAsync(id);
+            if (manuFacturer == null)
+            {
+                return NotFound();
+            }
+            var vm = new ManuFacturerCreateViewModel()
+            {
+                ManuFacturer = manuFacturer
+            };
+            return View(vm);
+        }
+
+        // POST: ManuFacturers/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, ManuFacturerCreateViewModel vm)
+        {
+            if (id != vm.ManuFacturer.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _bll.ManuFacturers.Update(vm.ManuFacturer);
+                await _bll.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View(vm);
+        }
+
+        // GET: ManuFacturers/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var manuFacturer = await _bll.ManuFacturers.FindAsync(id);
+            if (manuFacturer == null)
+            {
+                return NotFound();
+            }
+
+            return View(manuFacturer);
+        }
+
+        // POST: ManuFacturers/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            _bll.ManuFacturers.Remove(id);
+            await _bll.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<template>
+  <h1>Shop Details</h1>
+  <hr />
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Shop name
+            </th>
+            <th>
+              Shop address
+            </th>
+            <th>
+              Shop contact
+            </th>
+            <th>
+              Shop contact2
+            </th>
+            <th>
+              Orders amount
+            </th>
+            <th>
+              Products count
+            </th>
+            <th>
+              Returns count
+            </th>
+            <th>
+              Defects count
+            </th>
+            <th>
+              Users count
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${shop.shopName}
+            </td>
+            <td>
+              ${shop.shopAddress}
+            </td>
+            <td>
+              ${shop.shopContact}
+            </td>
+            <td>
+              ${shop.shopContact2}
+            </td>
+            <td>
+              ${shop.ordersCount}
+            </td>
+            <td>
+              ${shop.productsCount}
+            </td>
+            <td>
+              ${shop.returnsCount}
+            </td>
+            <td>
+              ${shop.defectsCount}
+            </td>
+            <td>
+              ${shop.appUsersCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: shopsIndex">Cancel</a>
+      <a class="btn bg-success disabled" if.bind="shop != null" route-href="route: shopsEdit; params.bind: {id: shop.id}">Edit Shop <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

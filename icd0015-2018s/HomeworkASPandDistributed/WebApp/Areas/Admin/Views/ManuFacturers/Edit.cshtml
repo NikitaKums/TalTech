@@ -1,0 +1,51 @@
+@model ManuFacturerCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Edit;
+}
+
+<h1>@Resources.Views.Common.Edit @Resources.Domain.ManuFacturer.Header</h1>
+<hr />
+<div>
+    <div class="col-md-6">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.Edit @Resources.Domain.ManuFacturer.Header</h3>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ManuFacturer.ManuFacturerName" class="control-label"></label>
+                        <input asp-for="ManuFacturer.ManuFacturerName" class="form-control" />
+                        <span asp-validation-for="ManuFacturer.ManuFacturerName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ManuFacturer.Aadress" class="control-label"></label>
+                        <input asp-for="ManuFacturer.Aadress" class="form-control" />
+                        <span asp-validation-for="ManuFacturer.Aadress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ManuFacturer.PhoneNumber" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                            </div>
+                            <input asp-for="ManuFacturer.PhoneNumber" class="form-control" />
+                        </div>
+                        <span asp-validation-for="ManuFacturer.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="ManuFacturer.Id"/>
+                    <button type="submit" class="btn bg-success float-right">@Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i></button>
+                    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

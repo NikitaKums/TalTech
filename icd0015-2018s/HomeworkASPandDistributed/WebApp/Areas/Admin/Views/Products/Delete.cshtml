@@ -1,0 +1,93 @@
+@model BLL.App.DTO.DomainLikeDTO.Product
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Delete;
+}
+
+<h1>@Resources.Views.Common.Delete @Resources.Domain.Product.Header</h1>
+<hr/>
+<div class="col-md-6">
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">@Resources.Views.Shared._Layout.LayoutAreYouSureYouWantToDeleteThis</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.ManuFacturerItemCode)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.ManuFacturerItemCode)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.ShopCode)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.ShopCode)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.ProductName)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.ProductName)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.BuyPrice)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-euro"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.BuyPrice)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.PercentageAddedToBuyPrice)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-percent"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.PercentageAddedToBuyPrice)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.SellPrice)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-euro"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.SellPrice)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Quantity)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Quantity)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Weight)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Weight)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Length)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Length)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Manufacturer)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Manufacturer.ManuFacturerName)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Inventory)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Inventory.Description)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Shop)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Shop.ShopName)" disabled>
+            </div>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" value="Delete" class="btn bg-danger float-right">
+                    @Resources.Views.Common.Delete <i class="nav-icon fa fa-trash"></i>
+                </a>
+                <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

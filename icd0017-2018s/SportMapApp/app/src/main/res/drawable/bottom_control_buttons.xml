@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/buttonClickColor"
+                android:endColor="@color/buttonClickColor" />
+            <corners android:radius="1dp" />
+            <stroke android:width="1dp" android:color="@color/appOrange" />
+        </shape>
+    </item> <!-- pressed -->
+
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/buttonDisabledColor"
+                android:endColor="@color/buttonDisabledColor" />
+            <corners android:radius="1dp" />
+            <stroke android:width="1dp" android:color="@color/appOrange" />
+        </shape>
+    </item> <!-- disabled -->
+
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/appBlack"
+                android:endColor="@color/appBlack" />
+            <corners android:radius="1dp" />
+            <stroke android:width="1dp" android:color="@color/appOrange" />
+        </shape>
+    </item> <!-- default -->
+
+</selector>

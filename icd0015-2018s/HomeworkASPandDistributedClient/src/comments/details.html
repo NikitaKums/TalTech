@@ -1,0 +1,43 @@
+<template>
+  <h1>Category Details</h1>
+  <hr />
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Comment title
+            </th>
+            <th>
+              Comment body
+            </th>
+            <th>
+            Products with comment
+          </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${comment.commentTitle}
+            </td>
+            <td>
+              ${comment.commentBody}
+            </td>
+            <td>
+              ${comment.productName}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: commentsIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="comment != null" route-href="route: commentsEdit; params.bind: {id: comment.id}">Edit Comment <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

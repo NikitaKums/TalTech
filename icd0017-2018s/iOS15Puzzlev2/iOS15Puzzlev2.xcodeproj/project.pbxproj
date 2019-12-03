@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		494D0C6C227F50F9007A841A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C6B227F50F9007A841A /* Theme.swift */; };
+		494D0C6E227F5154007A841A /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C6D227F5154007A841A /* ThemeProtocol.swift */; };
+		494D0C72227F52BB007A841A /* ThemeLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C71227F52BB007A841A /* ThemeLight.swift */; };
+		494D0C75227F5AFC007A841A /* ThemeDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C74227F5AFC007A841A /* ThemeDark.swift */; };
+		494D0C77227F5FB0007A841A /* ThemePurple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C76227F5FB0007A841A /* ThemePurple.swift */; };
+		494D0C79227F66AA007A841A /* ThemePinkBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D0C78227F66AA007A841A /* ThemePinkBlue.swift */; };
+		49700D68227EC2EF006B2C94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D67227EC2EF006B2C94 /* AppDelegate.swift */; };
+		49700D6A227EC2EF006B2C94 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D69227EC2EF006B2C94 /* MasterViewController.swift */; };
+		49700D6D227EC2EF006B2C94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700D6B227EC2EF006B2C94 /* Main.storyboard */; };
+		49700D6F227EC2F0006B2C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49700D6E227EC2F0006B2C94 /* Assets.xcassets */; };
+		49700D72227EC2F0006B2C94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49700D70227EC2F0006B2C94 /* LaunchScreen.storyboard */; };
+		49700D7A227EC91B006B2C94 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D79227EC91B006B2C94 /* SettingsViewController.swift */; };
+		49700D7C227EC92A006B2C94 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D7B227EC92A006B2C94 /* GameViewController.swift */; };
+		49700D7E227ED482006B2C94 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D7D227ED482006B2C94 /* SplitViewController.swift */; };
+		49700D84227EF86E006B2C94 /* TransferButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D83227EF86E006B2C94 /* TransferButton.swift */; };
+		49700D86227EF925006B2C94 /* PuzzleLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49700D85227EF925006B2C94 /* PuzzleLogic.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		494D0C6B227F50F9007A841A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		494D0C6D227F5154007A841A /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		494D0C71227F52BB007A841A /* ThemeLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeLight.swift; sourceTree = "<group>"; };
+		494D0C74227F5AFC007A841A /* ThemeDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDark.swift; sourceTree = "<group>"; };
+		494D0C76227F5FB0007A841A /* ThemePurple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePurple.swift; sourceTree = "<group>"; };
+		494D0C78227F66AA007A841A /* ThemePinkBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePinkBlue.swift; sourceTree = "<group>"; };
+		49700D64227EC2EF006B2C94 /* iOS15Puzzlev2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS15Puzzlev2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49700D67227EC2EF006B2C94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49700D69227EC2EF006B2C94 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		49700D6C227EC2EF006B2C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49700D6E227EC2F0006B2C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49700D71227EC2F0006B2C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49700D73227EC2F0006B2C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49700D79227EC91B006B2C94 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		49700D7B227EC92A006B2C94 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		49700D7D227ED482006B2C94 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		49700D83227EF86E006B2C94 /* TransferButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferButton.swift; sourceTree = "<group>"; };
+		49700D85227EF925006B2C94 /* PuzzleLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleLogic.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49700D61227EC2EF006B2C94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		494D0C73227F57DE007A841A /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				494D0C71227F52BB007A841A /* ThemeLight.swift */,
+				494D0C74227F5AFC007A841A /* ThemeDark.swift */,
+				494D0C76227F5FB0007A841A /* ThemePurple.swift */,
+				494D0C78227F66AA007A841A /* ThemePinkBlue.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		49700D5B227EC2EF006B2C94 = {
+			isa = PBXGroup;
+			children = (
+				49700D66227EC2EF006B2C94 /* iOS15Puzzlev2 */,
+				49700D65227EC2EF006B2C94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49700D65227EC2EF006B2C94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49700D64227EC2EF006B2C94 /* iOS15Puzzlev2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49700D66227EC2EF006B2C94 /* iOS15Puzzlev2 */ = {
+			isa = PBXGroup;
+			children = (
+				49700D67227EC2EF006B2C94 /* AppDelegate.swift */,
+				49700D69227EC2EF006B2C94 /* MasterViewController.swift */,
+				49700D6B227EC2EF006B2C94 /* Main.storyboard */,
+				49700D6E227EC2F0006B2C94 /* Assets.xcassets */,
+				49700D70227EC2F0006B2C94 /* LaunchScreen.storyboard */,
+				49700D73227EC2F0006B2C94 /* Info.plist */,
+				49700D79227EC91B006B2C94 /* SettingsViewController.swift */,
+				49700D7B227EC92A006B2C94 /* GameViewController.swift */,
+				49700D7D227ED482006B2C94 /* SplitViewController.swift */,
+				49700D83227EF86E006B2C94 /* TransferButton.swift */,
+				49700D85227EF925006B2C94 /* PuzzleLogic.swift */,
+				494D0C6B227F50F9007A841A /* Theme.swift */,
+				494D0C6D227F5154007A841A /* ThemeProtocol.swift */,
+				494D0C73227F57DE007A841A /* Themes */,
+			);
+			path = iOS15Puzzlev2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49700D63227EC2EF006B2C94 /* iOS15Puzzlev2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49700D76227EC2F0006B2C94 /* Build configuration list for PBXNativeTarget "iOS15Puzzlev2" */;
+			buildPhases = (
+				49700D60227EC2EF006B2C94 /* Sources */,
+				49700D61227EC2EF006B2C94 /* Frameworks */,
+				49700D62227EC2EF006B2C94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS15Puzzlev2;
+			productName = iOS15Puzzlev2;
+			productReference = 49700D64227EC2EF006B2C94 /* iOS15Puzzlev2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49700D5C227EC2EF006B2C94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = user154645;
+				TargetAttributes = {
+					49700D63227EC2EF006B2C94 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 49700D5F227EC2EF006B2C94 /* Build configuration list for PBXProject "iOS15Puzzlev2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49700D5B227EC2EF006B2C94;
+			productRefGroup = 49700D65227EC2EF006B2C94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49700D63227EC2EF006B2C94 /* iOS15Puzzlev2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49700D62227EC2EF006B2C94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49700D72227EC2F0006B2C94 /* LaunchScreen.storyboard in Resources */,
+				49700D6F227EC2F0006B2C94 /* Assets.xcassets in Resources */,
+				49700D6D227EC2EF006B2C94 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49700D60227EC2EF006B2C94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49700D7E227ED482006B2C94 /* SplitViewController.swift in Sources */,
+				494D0C6C227F50F9007A841A /* Theme.swift in Sources */,
+				49700D7C227EC92A006B2C94 /* GameViewController.swift in Sources */,
+				49700D84227EF86E006B2C94 /* TransferButton.swift in Sources */,
+				494D0C79227F66AA007A841A /* ThemePinkBlue.swift in Sources */,
+				49700D6A227EC2EF006B2C94 /* MasterViewController.swift in Sources */,
+				49700D68227EC2EF006B2C94 /* AppDelegate.swift in Sources */,
+				494D0C6E227F5154007A841A /* ThemeProtocol.swift in Sources */,
+				494D0C77227F5FB0007A841A /* ThemePurple.swift in Sources */,
+				49700D86227EF925006B2C94 /* PuzzleLogic.swift in Sources */,
+				49700D7A227EC91B006B2C94 /* SettingsViewController.swift in Sources */,
+				494D0C75227F5AFC007A841A /* ThemeDark.swift in Sources */,
+				494D0C72227F52BB007A841A /* ThemeLight.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49700D6B227EC2EF006B2C94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49700D6C227EC2EF006B2C94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49700D70227EC2F0006B2C94 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49700D71227EC2F0006B2C94 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49700D74227EC2F0006B2C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49700D75227EC2F0006B2C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49700D77227EC2F0006B2C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOS15Puzzlev2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikita.iOS15Puzzlev2.iOS15Puzzlev2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49700D78227EC2F0006B2C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOS15Puzzlev2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nikita.iOS15Puzzlev2.iOS15Puzzlev2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49700D5F227EC2EF006B2C94 /* Build configuration list for PBXProject "iOS15Puzzlev2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49700D74227EC2F0006B2C94 /* Debug */,
+				49700D75227EC2F0006B2C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49700D76227EC2F0006B2C94 /* Build configuration list for PBXNativeTarget "iOS15Puzzlev2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49700D77227EC2F0006B2C94 /* Debug */,
+				49700D78227EC2F0006B2C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49700D5C227EC2EF006B2C94 /* Project object */;
+}

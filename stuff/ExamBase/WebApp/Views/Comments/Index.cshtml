@@ -1,0 +1,52 @@
+@model IEnumerable<Domain.Comment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="row">
+        <div class="col-md-3">
+            <input class="form-control" name="search" value="@ViewBag.search"/>
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Search" class="btn btn-primary" />
+            <a asp-action="Index" asp-controller="Comments" class="btn btn-danger">Reset</a>
+        </div>
+    </div>
+    </form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentBody)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentBody)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

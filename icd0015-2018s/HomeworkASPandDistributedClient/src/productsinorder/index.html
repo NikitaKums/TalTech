@@ -1,0 +1,59 @@
+<template>
+  <h1>ProductInOrder Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productsinorderCreate" if.bind="productsInOrder[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productsinorderCreate" if.bind="productsInOrder[0].id == undefined">Create New</a>
+  </div>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Product In Order Placing Time
+          </th>
+          <th>
+            Product
+          </th>
+          <th>
+            Order
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsInOrder[0].id != undefined">
+        <tr repeat.for="productInOrder of productsInOrder">
+          <td>
+            ${productInOrder.quantity}
+          </td>
+          <td>
+            ${productInOrder.dateString}
+          </td>
+          <td>
+            ${productInOrder.productName}
+          </td>
+          <td>
+            ${productInOrder.orderDescription}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productsinorderEdit; params.bind: {id: productInOrder.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: productsinorderDetails; params.bind: {id: productInOrder.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: productsinorderDelete; params.bind: {id: productInOrder.id}">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>

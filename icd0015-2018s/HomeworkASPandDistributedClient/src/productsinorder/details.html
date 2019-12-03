@@ -1,0 +1,50 @@
+<template>
+  <h1>Product In Order Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product in order placing time
+            </th>
+            <th>
+              Product
+            </th>
+            <th>
+              Order
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${productInOrder.quantity}
+            </td>
+            <td>
+              ${productInOrder.dateString}
+            </td>
+            <td>
+              <a if.bind="productInOrder != undefined" route-href="route: productsDetails; params.bind: {id: productInOrder.productId}">${productInOrder.productName}</a>
+            </td>
+            <td>
+              <a if.bind="productInOrder != undefined" route-href="route: ordersDetails; params.bind: {id: productInOrder.orderId}">${productInOrder.orderDescription}</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: productsinorderIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="productInOrder != null" route-href="route: productsinorderEdit; params.bind: {id: productInOrder.id}">Edit Product in Order <i class="fa fa-pencil"></i></a>
+
+    </div>
+  </div>
+
+</template>

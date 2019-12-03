@@ -1,0 +1,98 @@
+@using ee.itcollege.nikita.Identity
+@model IEnumerable<Domain.Pizza>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+    bool canMakeChanges;
+    try
+    {
+        User?.GetUserId();
+        canMakeChanges = true;
+    }
+    catch
+    {
+        canMakeChanges = false;
+    }
+}
+<p>
+    @if (canMakeChanges)
+    {
+        <a asp-action="Create">Create New</a>
+    }
+    else
+    {
+        <p>Please login to make changes.</p>
+    }
+</p>
+<partial name="_SearchPartial"/>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Toppings
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pirce)
+            </td>
+            <td>
+                @if (item.ToppingsOnPizza.Count == 0)
+                {
+                    <p>----</p>
+                }
+                else
+                {
+                    foreach (var toppingsOnPizza in item.ToppingsOnPizza)
+                    {
+                        if (canMakeChanges)
+                        {
+                            <a asp-action="Details" asp-route-id="@toppingsOnPizza.Id" asp-controller="ToppingsOnPizza">@toppingsOnPizza.Topping.Description</a>
+                            <br/>
+                        }
+                        else
+                        {
+                            <p>@toppingsOnPizza.Topping.Description</p>
+                        }
+                    }
+                }
+            </td>
+            @if (!canMakeChanges)
+            {
+                <td>
+                    Please login to make changes.
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a><br/>
+                    <a asp-action="Create" asp-controller="ToppingsOnPizza" asp-route-id="@item.Id">Add topping</a>
+                </td>
+            }
+
+        </tr>
+    }
+    </tbody>
+</table>

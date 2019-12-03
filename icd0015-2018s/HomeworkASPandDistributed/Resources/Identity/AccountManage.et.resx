@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Ligipääs keelatud</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Kasutaja</value>
+  </data>
+  <data name="AccountLockedOut" xml:space="preserve">
+    <value>See kasutaja on lukustatud, palun proovi hiljem.</value>
+  </data>
+  <data name="AddAnotherLoginService" xml:space="preserve">
+    <value>Lisa uus sisselogimise teenus.</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>ja</value>
+  </data>
+  <data name="Associate" xml:space="preserve">
+    <value>Seo enda</value>
+  </data>
+  <data name="AuthApp" xml:space="preserve">
+    <value>Autentimise rakendus</value>
+  </data>
+  <data name="AuthenticatorUri" xml:space="preserve">
+    <value>Autentimise Uri</value>
+  </data>
+  <data name="AuthKeyProcess" xml:space="preserve">
+    <value>See tegevus blokeerib 2FA kuni te ei verifitseeri enda rakendust. Kui te ei tee rakenduse seadistamist lõpuni võite kaotada enda kasutaja.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Muuda parool</value>
+  </data>
+  <data name="ChangeYourAccountSettings" xml:space="preserve">
+    <value>Kasutaja seadete muutmine</value>
+  </data>
+  <data name="CheckEmailResetPassword" xml:space="preserve">
+    <value>Palun vaata enda emaili, et lähtestada enda parool.</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Verifitseerimise kood</value>
+  </data>
+  <data name="ConfigureAuthApp" xml:space="preserve">
+    <value>Autentimise rakenduse seadistamine</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Emaili kinnitamine</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Parooli kinnitus</value>
+  </data>
+  <data name="DeleteAndCloseAccount" xml:space="preserve">
+    <value>Kustuta minu andmed ning lukusta minu kasutaja</value>
+  </data>
+  <data name="DeletePersonalData" xml:space="preserve">
+    <value>Kustuta isiklikud andmed</value>
+  </data>
+  <data name="DeletingThisData" xml:space="preserve">
+    <value>Nende andmete kustutamine kustutab sinu kasutaja permanentselt ning seda ei ole võimalik taastata.</value>
+  </data>
+  <data name="Disable2FA" xml:space="preserve">
+    <value>Blokeeri 2FA</value>
+  </data>
+  <data name="Disable2FAText" xml:space="preserve">
+    <value>2FA blokeerimine ei muuda võtmeid, mis on kasutusel autentimise rakendustes. Kui soovite muuta võtmed, mis on kasutusel autentimise rakenduse poolt siis peaksite lähtestama autentimise võtmed.</value>
+  </data>
+  <data name="DisableTwoFactorAuthentication" xml:space="preserve">
+    <value>Blokeeri kahe faktoriline autentimine (2FA)</value>
+  </data>
+  <data name="Download2faApp" xml:space="preserve">
+    <value>Laadi alla kahe faktorilise autentimise rakendus nagu</value>
+  </data>
+  <data name="DownloadPersonalData" xml:space="preserve">
+    <value>Laadi Alla Enda Personaalsed Andmed</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailToFinishLogIn" xml:space="preserve">
+    <value>Palun sisesta email aadress selle lehekülje jaoks ja vajuta Register nupu peale, et lõpetada sisselogimine.</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Sisesta enda email</value>
+  </data>
+  <data name="ErrorMessagePasswordLength" xml:space="preserve">
+    <value> {0} peab olema vähemalt {2} ja kõik rohkem  {1} tähti pikk.</value>
+  </data>
+  <data name="ErrorMessagePasswordNoMatch" xml:space="preserve">
+    <value>Uus parool ja kinnituse parool  ei lange omavahel kokku.</value>
+  </data>
+  <data name="ExternalLogins" xml:space="preserve">
+    <value>Väline sisselogimine</value>
+  </data>
+  <data name="FinishingQRCode" xml:space="preserve">
+    <value>Kui sul on kood olemas, skaneeri see või sisesta võti, mis on kirjas üleval, mille järel  2FA rakendus pakub sulle unikaalse koodi. Sisesta see kood kinnituse aknas allpool.</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ForgetThisBrowser" xml:space="preserve">
+    <value>Unusta see brauser.</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Unustasid enda parooli?</value>
+  </data>
+  <data name="Generate2FACodes" xml:space="preserve">
+    <value>Genereeri 2FA taastamise koodid</value>
+  </data>
+  <data name="GenerateRecoveryCodes" xml:space="preserve">
+    <value>Genereeri taastamise võtmed</value>
+  </data>
+  <data name="GeneratingNewCodes" xml:space="preserve">
+    <value>Uute koodide genereerimine ei muude juba kasutusel olevaid võtmeid rakenduse poolt. Kui soovid muuta võtit, mis on rakenduse poolt kasutusel peaksid lähtestama autentimise võtmed.</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>siin</value>
+  </data>
+  <data name="HideYourCodes" xml:space="preserve">
+    <value>Pane koodid turvalisse kohta!</value>
+  </data>
+  <data name="IfResetAuthKey" xml:space="preserve">
+    <value>Kui te lähtestate autentimise võtit siis ei ole võimalik autentimise rakendust kasutades sisse logida kuni võtit pole uuesti seadistatud.</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Sisend</value>
+  </data>
+  <data name="LessThanThreeRecoveryCodesLeft" xml:space="preserve">
+    <value>Sul on &lt;3 taastamise võti alles.</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>Lukustatud</value>
+  </data>
+  <data name="LoginProtectedWith2FA" xml:space="preserve">
+    <value>Sisselogimine on kaitstud autentimise rakendusega. Palun siseda autentimise kood allpool.</value>
+  </data>
+  <data name="LoginUsingService" xml:space="preserve">
+    <value>Logi sisse kasutades {0} kasutajat</value>
+  </data>
+  <data name="LogoutMessage" xml:space="preserve">
+    <value>Oled edukalt välja loginud!</value>
+  </data>
+  <data name="LoseDeviceWithCode" xml:space="preserve">
+    <value>Kui sa kaotad enda seadme koos taastamise koodide siis ei ole võimalust saada enda kasutaja tagasi.</value>
+  </data>
+  <data name="ManageExternalLogins" xml:space="preserve">
+    <value>Halda väliseid sisselogimisi</value>
+  </data>
+  <data name="ManageYourAccount" xml:space="preserve">
+    <value>Kasutaja haldamine</value>
+  </data>
+  <data name="MustGenerateRecoveryCode" xml:space="preserve">
+    <value>Sa peaksid genereerima uued taastamise võtmed ennem kui oleks võimalik sisse logida neid kasutades.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Uus parool</value>
+  </data>
+  <data name="NoAccessToAuthDevice" xml:space="preserve">
+    <value>Pole ligipääsu autentimise seadmele? Sisse saab logida ka taastamise koodiga</value>
+  </data>
+  <data name="NoAccesToResource" xml:space="preserve">
+    <value>Sul ei ole ligipääsu sellele vahendile</value>
+  </data>
+  <data name="NoLocalAccount" xml:space="preserve">
+    <value>Kui sul ei ole lokaalset kasutajat/parooli selle lehekülje jaoks lisa lokaalne kasutaja nii et oleks võimalik sisse logida ilma välist teenust kasutades.</value>
+  </data>
+  <data name="NoRecoveryCode" xml:space="preserve">
+    <value>Sul ei ole enam ühtegi taastamise võtit alles.</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Vana parool</value>
+  </data>
+  <data name="OneRecoveryCodeLeft" xml:space="preserve">
+    <value>Sul on 1 taastamise võti alles.</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>või</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parool</value>
+  </data>
+  <data name="PasswordHasBeenReset" xml:space="preserve">
+    <value>Parool on lähtestatud.</value>
+  </data>
+  <data name="PersonalData" xml:space="preserve">
+    <value>Personaalsed andmed</value>
+  </data>
+  <data name="PersonalDataInfo" xml:space="preserve">
+    <value>Sinu kasutaja sisaldab personaalseid andmeid, mida sa oled meile andnud. See leht võimaldab laadid need andmed alla või kustutada need.</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefoninumber</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profiil</value>
+  </data>
+  <data name="RecoveryCode" xml:space="preserve">
+    <value>Taastamise võti</value>
+  </data>
+  <data name="RecoveryCodes" xml:space="preserve">
+    <value>Taastamise võtmed</value>
+  </data>
+  <data name="RememberMachine" xml:space="preserve">
+    <value>Pea see seade meeles?</value>
+  </data>
+  <data name="RemoveThisLogin" xml:space="preserve">
+    <value>Eemalda see {0} sisselogimine enda kasutajalt</value>
+  </data>
+  <data name="RequestLoginRecoveryCode" xml:space="preserve">
+    <value>Oled esitanud soovi sisse logida kasutades taastamise võtit. See sisselogimise viis ei pea sind meeles kuni sa ei varusta autenitimise rakenduse koodiga sisse logimise ajal või blokeerid 2FA ja logid sisse järjekordselt.</value>
+  </data>
+  <data name="ResetAuthKey" xml:space="preserve">
+    <value>Lähtesta autentimise võti</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Lähtesta parool</value>
+  </data>
+  <data name="ResetRecoveryCodes" xml:space="preserve">
+    <value>Lähtesta taastamise võtmed.</value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Skaneerige QR kood või sisestage see kood enda 2FA rakendusse. Tühikud ja suured/väiksed tähed ei ole olulised.</value>
+  </data>
+  <data name="SendVerificationEmail" xml:space="preserve">
+    <value>Saada verifitseerimise email</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Seadista parool</value>
+  </data>
+  <data name="SharedKey" xml:space="preserve">
+    <value>Jagatud võti</value>
+  </data>
+  <data name="ShouldGenerateRecoveryCode" xml:space="preserve">
+    <value>Sa peaksid genereerima uued taastamise võtmed ennem kui oleks võimalik sisse logida neid kasutades.</value>
+  </data>
+  <data name="StatusMessage" xml:space="preserve">
+    <value>Staatuse teade</value>
+  </data>
+  <data name="SuccessfullyAuthenticated" xml:space="preserve">
+    <value>Oled edukalt autentinud ennast kasutades</value>
+  </data>
+  <data name="ThankConfirmEmail" xml:space="preserve">
+    <value>Aitäh, et kinnitasite emaili</value>
+  </data>
+  <data name="ThisActionOnlyDisabled2FA" xml:space="preserve">
+    <value>See tegevus ainult blokeerib 2FA</value>
+  </data>
+  <data name="ToEnableQRCode" xml:space="preserve">
+    <value>QR koodi genereerimiseks palun loe meie dokumentatsiooni</value>
+  </data>
+  <data name="ToUseAuthApp" xml:space="preserve">
+    <value>Autentimise rakenduse kasutamiseks tehkse järgmised sammud</value>
+  </data>
+  <data name="TwoFactorAuthentication" xml:space="preserve">
+    <value>Kahe faktoriline autentimine</value>
+  </data>
+  <data name="TwoFactorCode" xml:space="preserve">
+    <value>Autentimise kood</value>
+  </data>
+  <data name="UpdatePassword" xml:space="preserve">
+    <value>Uuenda parool</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Kasutajanimi</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verifitseeri</value>
+  </data>
+</root>

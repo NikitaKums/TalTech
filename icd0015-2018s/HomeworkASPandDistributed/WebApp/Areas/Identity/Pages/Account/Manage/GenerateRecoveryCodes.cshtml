@@ -1,0 +1,26 @@
+﻿@page
+@model GenerateRecoveryCodesModel
+@{
+    ViewData["Title"] = @Resources.Identity.AccountManage.Generate2FACodes;
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>@Resources.Identity.AccountManage.HideYourCodes</strong>
+    </p>
+    <p>
+        @Resources.Identity.AccountManage.LoseDeviceWithCode
+    </p>
+    <p>
+        @Resources.Identity.AccountManage.GeneratingNewCodes <a asp-page="./ResetAuthenticator">@Resources.Identity.AccountManage.Here.</a>
+    </p>
+</div>
+<div>
+    <form method="post" class="form-group">
+        <button class="btn btn-danger" type="submit">@Resources.Identity.AccountManage.GenerateRecoveryCodes</button>
+    </form>
+</div>

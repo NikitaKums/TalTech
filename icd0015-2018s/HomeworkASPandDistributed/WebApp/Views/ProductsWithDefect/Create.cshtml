@@ -1,0 +1,53 @@
+@model ProductWithDefectCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Create;
+}
+
+<h1>@Resources.Domain.ProductWithDefect.AddProductToDefect</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Domain.ProductWithDefect.AddProductToDefect</h3>
+            </div>
+            <form asp-action="Create">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ProductWithDefect.Quantity" class="control-label"></label>
+                        <input asp-for="ProductWithDefect.Quantity" class="form-control"/>
+                        <span asp-validation-for="ProductWithDefect.Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductWithDefect.DefectRecordingTime" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input asp-for="ProductWithDefect.DefectRecordingTime" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="ProductWithDefect.DefectRecordingTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductWithDefect.Product" class="control-label"></label>
+                        <select asp-for="ProductWithDefect.ProductId" class="form-control select-auto-complete" asp-items="Model.ProductSelectList"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductWithDefect.Defect" class="control-label"></label>
+                        <select asp-for="ProductWithDefect.DefectId" class="form-control select-auto-complete" asp-items="Model.DefectSelectList"></select>
+                    </div>
+                    <button type="submit" class="btn bg-warning float-right">@Resources.Views.Common.Submit</button>
+                    <a asp-action="Index" asp-controller="Defects" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

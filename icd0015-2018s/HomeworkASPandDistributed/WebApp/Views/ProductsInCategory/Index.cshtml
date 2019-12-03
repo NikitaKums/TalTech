@@ -1,0 +1,52 @@
+@model IEnumerable<BLL.App.DTO.DomainLikeDTO.ProductInCategory>
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Index;
+}
+
+<h1>@Resources.Domain.ProductInCategory.Header @Resources.Views.Common.Index</h1>
+<hr/>
+<div class="create-button-div">
+    <a asp-action="Create" class="btn btn-block btn-warning">@Resources.Views.Common.CreateNew</a>
+</div>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Product)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra">
+                            <i class="nav-icon fa fa-pencil"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                            <i class="nav-icon fa fa-info"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra">
+                            <i class="nav-icon fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

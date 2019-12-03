@@ -1,0 +1,49 @@
+<template>
+  <h1>Shipper Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Shipper name
+            </th>
+            <th>
+              Shipper address
+            </th>
+            <th>
+              PhoneNumber
+            </th>
+            <th>
+              Products with this shipper
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${shipper.shipperName}
+            </td>
+            <td>
+              ${shipper.shipperAddress}
+            </td>
+            <td>
+              ${shipper.phoneNumber}
+            </td>
+            <td>
+              ${shipper.ordersCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: shippersIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="shipper != null" route-href="route: shippersEdit; params.bind: {id: shipper.id}">Edit Shipper <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

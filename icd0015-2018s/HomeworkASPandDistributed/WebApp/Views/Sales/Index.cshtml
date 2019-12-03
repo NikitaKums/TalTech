@@ -1,0 +1,159 @@
+@using System.Globalization
+@using ee.itcollege.nikita.Identity
+@using Microsoft.AspNetCore.Identity
+@model SalesIndexModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Index;
+    decimal? overAllTotalSaleAmount = 0;
+    decimal? todayTotalSaleAmount = 0;
+}
+
+<div>
+    <h1>@Resources.Domain.Sale.Sales @Resources.Views.Common.Index</h1>
+    <hr/>
+    <div class="create-button-div">
+        <a asp-action="Create" class="btn btn-block btn-warning">@Resources.Views.Common.CreateNew</a>
+    </div>
+    <form asp-action="Index" method="get">
+        <partial name="_SearchPartial"/>
+    </form>
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["DescriptionSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.Sale.Description
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["CreationTimeSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.Sale.SaleInitialCreationTime
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["UserSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.Sale.AppUser
+                        </a>
+                    </th>
+                    <th>
+                        @Resources.Domain.Sale.ProductsInSale
+                    </th>
+                    <th>
+                        @Resources.Domain.Sale.Total
+                    </th>
+                    <th>
+                        @Resources.Domain.Sale.CurrentDay
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.Sales)
+                {
+                    {
+                        overAllTotalSaleAmount += item.AllTotalSaleAmount;
+                        todayTotalSaleAmount += item.TodayTotalSaleAmount;
+                    }
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SaleInitialCreationTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppUser.FirstLastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductsSold.Count)
+                        </td>
+                        <td>
+                            @CultureInfo.GetCultureInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString()).NumberFormat.CurrencySymbol
+                            @Html.DisplayFor(modelItem => item.AllTotalSaleAmount)
+                        </td>
+                        <td>
+                            @CultureInfo.GetCultureInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString()).NumberFormat.CurrencySymbol
+                            @Html.DisplayFor(modelItem => item.TodayTotalSaleAmount)
+                        </td>
+                        <td>
+                            @if (User.GetUserId() == item.AppUserId)
+                            {
+                                <a asp-action="AddProductToSale" asp-route-id="@item.Id" class="btn bg-warning btn-extra">
+                                    <i class="nav-icon fa fa-plus"></i>
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                                    <i class="nav-icon fa fa-info"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra">
+                                    <i class="nav-icon fa fa-pencil"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra">
+                                    <i class="nav-icon fa fa-trash"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="AddProductToSale" asp-route-id="@item.Id" class="btn bg-warning btn-extra disabled">
+                                    <i class="nav-icon fa fa-plus"></i>
+                                </a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                                    <i class="nav-icon fa fa-info"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra disabled">
+                                    <i class="nav-icon fa fa-pencil"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra disabled">
+                                    <i class="nav-icon fa fa-trash"></i>
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <hr/>
+        <div>
+            <div class="float-right">
+                <strong>@Resources.Domain.Sale.AllTotal:</strong> 
+                @CultureInfo.GetCultureInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString()).NumberFormat.CurrencySymbol
+                @($"{Model.SaleAmounts["overAllTotalSaleAmount"]:0.00}")<br/>
+                <strong>@Resources.Domain.Sale.TodayTotal:</strong> 
+                @CultureInfo.GetCultureInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString()).NumberFormat.CurrencySymbol
+                @($"{Model.SaleAmounts["overAllTodayTotalSaleAmount"]:0.00}")
+            </div>
+        </div>
+    </div>
+<div class="float-right">
+
+    <div class="dataTables_paginate paging_simple_numbers">
+        @{
+            var prevDisabled = !Model.Sales.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.Sales.HasNextPage ? "disabled" : "";
+        }
+
+        <ul class="pagination">
+            <li class="paginate_button page-item previous @prevDisabled">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.Sales.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="page-link">
+                    @Resources.Views.Common.Previous
+                </a>
+            </li>
+            <li class="paginate_button page-item next @nextDisabled">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.Sales.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="page-link">
+                    @Resources.Views.Common.Next
+                </a>
+            </li>
+        </ul>
+    </div>
+</div></div>

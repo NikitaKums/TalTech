@@ -1,0 +1,23 @@
+<table class="user_table">
+    <tr>
+        <th>Nimi</th>
+        <th>Perekonnanimi</th>
+        <th>Telefon</th>
+    </tr>
+    <tr>
+        <td colspan="3"><hr></td>
+    </tr>
+</table>
+<table class="data_table">
+    <tr tpl-foreach="$lines as $line">
+        <td>
+            <a href="?cmd=edit_page&amp;id={{ $line->id }}">{{ $line->firstName }}</a>
+        </td>
+        <td>{{ $line->lastName }}</td>
+        <td>
+            <div tpl-foreach="$line->phones as $phone">
+                <span>{{ $phone }}</span>
+            </div>
+        </td>
+    </tr>
+</table><!-- need to push -->

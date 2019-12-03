@@ -1,0 +1,51 @@
+<template>
+  <require from="select2-custom-attribute"></require>
+  <h1>Edit Product With Defect</h1>
+  <hr/>
+  <div class="div-with-date">
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Product With Defect</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="ProductWithDefect_Quantity">Quantity</label>
+              <input class="form-control" type="number" id="ProductWithDefect_Quantity" name="ProductWithDefect.Quantity" value.bind="productWithDefect.quantity" />
+            </div>
+            <aurelia-flatpickr config.bind="{wrap:true}" value.bind="productWithDefect.defectRecordingTime">
+              <label class="control-label">Defect recording time</label>
+              <div class="input-group aurelia-flatpickr">
+                <input type="text" class="form-control" placeholder="Select date" data-input>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-clear>Clear</button>
+                    <button class="btn btn-default" type="button" data-toggle>Show</button>
+                  </span>
+              </div>
+            </aurelia-flatpickr>
+            <div class="form-group">
+              <label class="control-label" for="ProductWithDefect_ProductId">Product</label>
+              <select select2 class="form-control select-auto-complete" id="ProductWithDefect_ProductId" value.bind="productWithDefect.productId">
+                <option repeat.for="product of products" model.bind="product.id">
+                  ${product.productName}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="ProductWithDefect_DefectId">Defect</label>
+              <select select2 class="form-control select-auto-complete"  id="ProductWithDefect_DefectId" value.bind="productWithDefect.defectId">
+                <option repeat.for="defect of defects" model.bind="defect.id">
+                  ${defect.description}
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Product with Defect <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" if.bind="defectDefectId != undefined" route-href="route: defectsDetails; params.bind: {id: defectDefectId}">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

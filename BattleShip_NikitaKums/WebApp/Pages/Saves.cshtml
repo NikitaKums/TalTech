@@ -1,0 +1,64 @@
+@page
+@model SavesModel
+@{
+    ViewData["Title"] = "Saves";
+}
+<form method="post">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                <span></span>
+            </th>
+            <th>
+                <span>Date</span>
+            </th>
+            <th>
+                <span>Winner</span>
+            </th>
+            <th>
+                <span>Player</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.SaveHeaders)
+        {
+            <tr>
+                <td>
+                    <input name="indexRadio" type="radio" value="@item[0]"/>
+                </td>
+                <td>
+                    @item[1]
+                </td>
+                <td>
+                    @item[2]
+                </td>
+                <td>
+                    @item[3]
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <label>
+        Continue save:
+        <input name="radio" type="radio" value="Continue"/>
+    </label>
+    <br/>
+    <label>
+        Delete save:
+        <input name="radio" type="radio" value="Delete"/>
+    </label>
+    <br/>
+    <span class="alert-danger" asp-validation-for="Error"></span> <br/>
+    <input type="submit" class="btn" value="Make Choice"/>
+</form>
+<br/>
+<input type="submit" id="myButton" class="btn" value="Exit to menu" onclick="redirect()"/>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "Menu";
+    };
+</script>

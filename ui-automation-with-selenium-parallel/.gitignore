@@ -1,0 +1,6 @@
+# IDEA Specific
+.idea/
+ui-automation-selenium.iml
+
+# Project specific
+target

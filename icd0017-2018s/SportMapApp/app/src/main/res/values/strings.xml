@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">SportMapApp</string>
+    <string name="title_activity_maps">SportMapApp</string>
+    <string name="placeholder">----</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="total_time">Total Time</string>
+    <string name="direct_distance">Direct Distance</string>
+    <string name="pace_km_m">Pace km/min</string>
+    <string name="time">Time</string>
+    <string name="check_point">CheckPoint</string>
+    <string name="way_point">WayPoint</string>
+    <string name="start">Start</string>
+    <string name="centered">Centered</string>
+    <string name="sessions">Sessions</string>
+    <string name="reset">Reset</string>
+    <string name="north_up">North Up</string>
+    <string name="compass">Compass</string>
+    <string name="session_id">Session ID</string>
+    <string name="export">Export</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="enter_distance_here">Enter your distance here</string>
+</resources>

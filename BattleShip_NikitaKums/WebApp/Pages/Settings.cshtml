@@ -1,0 +1,44 @@
+@page
+@using DAL
+@using Domain
+@model SettingsModel
+@{
+    ViewData["Title"] = "Settings";
+}
+<form method="post">
+    <table width="400">
+        <tr>
+            <td>
+                Board Size: <input asp-for="BoardSize" class="form-control" value="@Options.OPTIONS["Board size"]"/>
+                <span asp-validation-for="BoardSize"></span>
+                <br/>
+                Can Touch (1 = Yes | 0 = No): <input asp-for="CanTouch" class="form-control" value="@Options.OPTIONS["Can touch"]"/>
+                <span asp-validation-for="CanTouch"></span>
+                <br/>
+                Carrier amount: <input asp-for="CarrierAmount" class="form-control" value="@Options.OPTIONS["Carrier amount"]"/>
+                <span asp-validation-for="CarrierAmount"></span>
+                <br/>
+                Battleship amount: <input asp-for="BattleshipAmount" class="form-control" value="@Options.OPTIONS["Battleship amount"]"/>
+                <span asp-validation-for="BattleshipAmount"></span>
+                <br/>
+                Submarine amount: <input asp-for="SubmarineAmount" class="form-control" value="@Options.OPTIONS["Submarine amount"]"/>
+                <span asp-validation-for="SubmarineAmount"></span>
+                <br/>
+                Cruiser amount: <input asp-for="CruiserAmount" class="form-control" value="@Options.OPTIONS["Cruiser amount"]"/>
+                <span asp-validation-for="CruiserAmount"></span>
+                <br/>
+                Patrol amount: <input asp-for="PatrolAmount" class="form-control" value="@Options.OPTIONS["Patrol amount"]"/>
+                <span asp-validation-for="PatrolAmount"></span>
+                <br/>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <input name="submit" type="submit" value="Change" id="Changes" class="btn"/>
+        <input name="submit" type="submit" value="Cancel" id="Cancel" class="btn cancel"/>
+    </div>
+</form>
+
+@section scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

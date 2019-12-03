@@ -1,0 +1,45 @@
+<template>
+  <h1>Order Received</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="create-button-div">
+      <form method="post" submit.delegate="submit()">
+        <button type="submit" class="btn btn-block btn-primary">All items received</button>
+      </form>
+    </div>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product name
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="ordersReceived.length > 0">
+          <tr repeat.for="orderReceived of ordersReceived">
+            <td>
+              ${orderReceived.quantity}
+            </td>
+            <td>
+              <a route-href="route: productsDetails; params.bind: {id: orderReceived.productId}">${orderReceived.productName}</a>
+            </td>
+            <td>
+              <form method="post" submit.delegate="submitSingle(orderReceived.productInOrderId)">
+                <button type="submit" class="btn btn-block btn-primary">Item received</button>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a class="btn btn-default" route-href="route: ordersIndex">Cancel</a>
+  </div>
+
+</template>

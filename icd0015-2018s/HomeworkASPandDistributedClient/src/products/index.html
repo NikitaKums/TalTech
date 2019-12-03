@@ -1,0 +1,174 @@
+<template>
+  <h1>Product Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productsCreate" if.bind="products[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productsCreate" if.bind="products[0].id == undefined">Create New</a>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Manufacturer item code
+          </th>
+          <th>
+            Shop code
+          </th>
+          <th>
+            Product name
+          </th>
+          <th>
+            Buy price
+          </th>
+          <th>
+            Percentage added to buy price
+          </th>
+          <th>
+            Sell price
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Weight
+          </th>
+          <th>
+            Length
+          </th>
+          <th>
+            Manufacturer
+          </th>
+          <th>
+            Inventory
+          </th>
+          <th>
+            Shop
+          </th>
+          <th>
+            Amount ordered
+          </th>
+          <th>
+            Amount sold
+          </th>
+          <th>
+            Return issues
+          </th>
+          <th>
+            Defect issues
+          </th>
+          <th>
+            Categories
+          </th>
+          <th>
+            Comments
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="products[0].id != undefined">
+        <tr repeat.for="product of products">
+          <td>
+            ${product.manuFacturerItemCode}
+          </td>
+          <td>
+            ${product.shopCode}
+          </td>
+          <td>
+            ${product.productName}
+          </td>
+          <td>
+            ${product.buyPrice}
+          </td>
+          <td>
+            ${product.percentageAddedToBuyPrice}
+          </td>
+          <td>
+            ${product.sellPrice}
+          </td>
+          <td>
+            ${product.quantity}
+          </td>
+          <td>
+            ${product.weight}
+          </td>
+          <td>
+            ${product.length}
+          </td>
+          <td>
+            ${product.manuFacturerName}
+          </td>
+          <td>
+            ${product.inventoryName}
+          </td>
+          <td>
+            ${product.shopName}
+          </td>
+          <td>
+            ${product.productsInOrdersCount}
+          </td>
+          <td>
+            ${product.productsSoldCount}
+          </td>
+          <td>
+            ${product.productReturnsCount}
+          </td>
+          <td>
+            ${product.productsWithDefectCount}
+          </td>
+          <td if.bind="product.categoryDTOs[0].categoryName != undefined">
+            ${product.categoryDTOs[0].categoryName}<br>
+            <small if.bind="product.categoryDTOs.length > 1">
+              See
+              <a route-href="route: productsDetails; params.bind: {id: product.id}"> details </a>
+              for more</small>
+          </td>
+          <td if.bind="product.categoryDTOs[0].categoryName == undefined">
+            ---
+          </td>
+          <td if.bind="product.commentDTOs[0].commentTitle != undefined">
+              <strong>${product.commentDTOs[0].commentTitle}</strong><br>
+                      ${product.commentDTOs[0].commentBody}<br>
+              <small if.bind="product.commentDTOs.length > 1"> 
+                See 
+                <a route-href="route: productsDetails; params.bind: {id: product.id}"> details </a>
+                for more</small>
+          </td>
+          <td if.bind="product.commentDTOs[0].commentTitle == undefined">
+            ---
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productsEdit; params.bind: {id: product.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: productsDetails; params.bind: {id: product.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra disabled" route-href="route: productsDelete; params.bind: {id: product.id}" if.bind="product != null && product.productsInOrdersCount > 0 
+            && product.productsSoldCount > 0 && product.productReturnsCount > 0 && product.productsWithDefectCount > 0 && product.categoryDTOs.length > 0 && product.commentDTOs.length > 0 ">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: productsDelete; params.bind: {id: product.id}" if.bind="product != null && product.productsInOrdersCount == 0 
+            && product.productsSoldCount == 0 && product.productReturnsCount == 0 && product.productsWithDefectCount == 0 && product.categoryDTOs.length == 0 && product.commentDTOs.length == 0 ">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <compose view="../pagination_partial.html"></compose>
+</template>

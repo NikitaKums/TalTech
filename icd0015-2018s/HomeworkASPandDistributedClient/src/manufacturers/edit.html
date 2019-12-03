@@ -1,0 +1,39 @@
+<template>
+  <h1>Edit ManuFacturer</h1>
+  <hr />
+  <div>
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Manufacturer</h3>
+        </div>
+        <form submit.delegate="submit()" method="post">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="control-label" for="ManuFacturerName">Manufacturer name</label>
+              <input class="form-control" type="text" id="ManuFacturerName" name="ManuFacturerName"  value.bind="manuFacturer.manuFacturerName"/>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Aadress">Aadress</label>
+              <input class="form-control" type="text" data-val="true" id="Aadress"  name="Aadress" value.bind="manuFacturer.aadress"/>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="PhoneNumber">PhoneNumber</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                </div>
+                <input class="form-control" type="text" id="PhoneNumber" name="PhoneNumber" value.bind="manuFacturer.phoneNumber"/>
+              </div>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Manufacturer <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" route-href="manufacturersIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

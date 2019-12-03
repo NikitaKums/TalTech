@@ -1,0 +1,50 @@
+@model ShipperCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Create;
+}
+
+<h1>@Resources.Views.Common.Create @Resources.Domain.Shipper.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.CreateNew @Resources.Domain.Shipper.Header</h3>
+            </div>
+            <form asp-action="Create">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Shipper.ShipperName" class="control-label"></label>
+                        <input asp-for="Shipper.ShipperName" class="form-control"/>
+                        <span asp-validation-for="Shipper.ShipperName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Shipper.ShipperAddress" class="control-label"></label>
+                        <input asp-for="Shipper.ShipperAddress" class="form-control"/>
+                        <span asp-validation-for="Shipper.ShipperAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Shipper.PhoneNumber" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Shipper.PhoneNumber" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="Shipper.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn bg-warning float-right">@Resources.Views.Common.Create</button>
+                    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

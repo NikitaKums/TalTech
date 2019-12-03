@@ -1,0 +1,26 @@
+<template>
+  <h1>Details</h1>
+
+  <div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="row">
+      <dt class = "col-sm-2">
+        CommentTitle
+      </dt>
+      <dd class = "col-sm-10">
+        ${comment.commentTitle}
+      </dd>
+      <dt class = "col-sm-2">
+        CommentBody
+      </dt>
+      <dd class = "col-sm-10">
+        ${comment.commentBody}
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <a if.bind="comment.id != undefined" route-href="route: commentsEdit; params.bind: {id: comment.id}">Edit</a> |
+    <a route-href="route: commentsIndex">Back to List</a>
+  </div>
+</template>

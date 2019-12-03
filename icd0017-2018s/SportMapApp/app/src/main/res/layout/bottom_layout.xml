@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBlack">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonStartOrStopService"
+            style="@style/LayoutControlButtons"
+            android:onClick="startOrStopServiceButtonOnClick"
+            android:text="@string/start" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            style="@style/bottomLayoutIMGButtons"
+            android:src="@drawable/baseline_power_settings_new_white_18dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            style="@style/labelTextFields"
+            android:text="@string/total_distance" />
+
+        <TextView
+            android:id="@+id/textViewTotalDistance"
+            style="@style/dataTextFields"/>
+
+        <TextView
+            android:id="@+id/textView17"
+            style="@style/labelTextFields"
+            android:text="@string/pace_km_m" />
+
+        <TextView
+            android:id="@+id/textViewPace"
+            style="@style/dataTextFields" />
+
+        <TextView
+            android:id="@+id/textView19"
+            style="@style/labelTextFields"
+            android:text="@string/total_time" />
+
+        <TextView
+            android:id="@+id/textViewTotalTime"
+            style="@style/dataTextFields" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/buttonCheckPointAdd"
+            style="@style/LayoutControlButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10sdp"
+            android:onClick="checkPointAddButtonOnClick"
+            android:text="@string/check_point" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            style="@style/bottomLayoutIMGButtons"
+            android:src="@drawable/baseline_beenhere_white_18dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            style="@style/labelTextFields"
+            android:text="@string/total_distance" />
+
+        <TextView
+            android:id="@+id/textViewTotalDistanceCheckPoint"
+            style="@style/dataTextFields" />
+
+        <TextView
+            android:id="@+id/textView23"
+            style="@style/labelTextFields"
+            android:text="@string/direct_distance" />
+
+        <TextView
+            android:id="@+id/textViewDirectDistanceCheckPoint"
+            style="@style/dataTextFields" />
+
+        <TextView
+            android:id="@+id/textView25"
+            style="@style/labelTextFields"
+            android:text="@string/time" />
+
+        <TextView
+            android:id="@+id/textViewCheckPointTime"
+            style="@style/dataTextFields" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/buttonWayPointAdd"
+            style="@style/LayoutControlButtons"
+            android:onClick="wayPointAddButtonOnClick"
+            android:text="@string/way_point" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            style="@style/bottomLayoutIMGButtons"
+            android:src="@drawable/baseline_flag_white_18dp" />
+
+        <TextView
+            android:id="@+id/textView32"
+            style="@style/labelTextFields"
+            android:text="@string/total_distance" />
+
+        <TextView
+            android:id="@+id/textViewTotalDistanceWayPoint"
+            style="@style/dataTextFields" />
+
+        <TextView
+            android:id="@+id/textView30"
+            style="@style/labelTextFields"
+            android:text="@string/direct_distance" />
+
+        <TextView
+            android:id="@+id/textViewDirectDistanceWayPoint"
+            style="@style/dataTextFields" />
+
+        <TextView
+            android:id="@+id/textView28"
+            style="@style/labelTextFields"
+            android:text="@string/time" />
+
+        <TextView
+            android:id="@+id/textViewWayPointTime"
+            style="@style/dataTextFields" />
+    </LinearLayout>
+</LinearLayout>

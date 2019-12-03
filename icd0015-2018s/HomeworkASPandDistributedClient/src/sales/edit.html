@@ -1,0 +1,39 @@
+<template>
+
+  <h1>Edit Sale</h1>
+  <hr/>
+  <div class="div-with-date">
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Sale</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Sale_Description">Description</label>
+              <input class="form-control" id="Sale_Description" name="Sale.Description" value.bind="sale.description"/>
+            </div>
+            <aurelia-flatpickr config.bind="{wrap:true}" value.bind="sale.saleInitialCreationTime">
+              <label class="control-label">Sale initial creation time</label>
+              <div class="input-group aurelia-flatpickr">
+                <input type="text" class="form-control" placeholder="Select date" data-input>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-clear>Clear</button>
+                    <button class="btn btn-default" type="button" data-toggle>Show</button>
+                  </span>
+              </div>
+            </aurelia-flatpickr>
+            <div class="form-group">
+              <span>Your Shop: <strong>${appUser.shopName}</strong></span>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Sale <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" route-href="route: salesIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

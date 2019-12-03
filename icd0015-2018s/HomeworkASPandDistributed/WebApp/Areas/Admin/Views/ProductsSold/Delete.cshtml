@@ -1,0 +1,53 @@
+@model BLL.App.DTO.DomainLikeDTO.ProductSold
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Delete;
+}
+
+<h1>@Resources.Domain.ProductSold.DeleteProductFromSale</h1>
+<hr/>
+<div class="col-md-6">
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">@Resources.Views.Shared._Layout.LayoutAreYouSureYouWantToDeleteThis</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Quantity)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Quantity)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.ProductSoldTime)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.ProductSoldTime)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Product)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Product.ProductName)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Sale)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Sale.Description)" disabled>
+            </div>
+            <form asp-action="DeleteRestoreProductQuantity">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" class="btn bg-danger float-right">
+                    @Resources.Views.Common.Delete (@Resources.Domain.ProductSold.RestoreQuantity) <i class="nav-icon fa fa-trash"></i>
+                </a>
+                <a asp-action="Details" asp-route-id="@Model.SaleId" asp-controller="Sales" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+            </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" value="Delete" class="btn bg-danger float-right">
+                    @Resources.Views.Common.Delete <i class="nav-icon fa fa-trash"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

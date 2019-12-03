@@ -1,0 +1,38 @@
+<template>
+  <h1>Edit Inventory</h1>
+  <hr/>
+  <div class="div-with-date">
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Inventory</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Inventory_Description">Description</label>
+              <input class="form-control" type="text" id="Inventory_Description" name="Inventory.Description" value.bind="inventory.description" />
+            </div>
+            <aurelia-flatpickr config.bind="{wrap:true}" value.bind="inventory.inventoryCreationTime">
+            <label class="control-label">Inventory creation time</label>
+            <div class="input-group aurelia-flatpickr">
+              <input type="text" class="form-control" placeholder="Select date" data-input>
+              <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-clear>Clear</button>
+                    <button class="btn btn-default" type="button" data-toggle>Show</button>
+                  </span>
+            </div>
+            </aurelia-flatpickr>
+            <div class="form-group">
+              <span>Your Shop: <strong>${inventory.shopName}</strong></span>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Inventory <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" route-href="route: inventorysIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

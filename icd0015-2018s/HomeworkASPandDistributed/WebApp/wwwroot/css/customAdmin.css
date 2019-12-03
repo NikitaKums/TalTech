@@ -1,0 +1,24 @@
+@import "custom.css";
+
+html, body, .container-fluid, .wrapper, .content-wrapper{
+    background: #ebccd1;
+}
+
+.select2-selection__choice {
+    background-color: #f6f6f6 !important;
+    color: #000 !important;
+}
+
+.language-select, select option{
+    background: #f6f6f6 !important;
+    color: #000 !important;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+}
+
+.language-select:hover, select option{
+    cursor: pointer;
+    border-radius: 10px;
+    background: #ededed !important;
+}

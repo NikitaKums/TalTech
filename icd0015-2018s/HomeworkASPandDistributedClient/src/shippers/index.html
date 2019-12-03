@@ -1,0 +1,76 @@
+<template>
+  <div>
+    <h1>Shipper Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: shippersCreate" if.bind="shippers[0].id != undefined">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: shippersCreate" if.bind="shippers[0].id == undefined">Create New</a>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Shipper name
+            </th>
+            <th>
+              Shipper address
+            </th>
+            <th>
+              PhoneNumber
+            </th>
+            <th>
+              Orders with this shipper
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="shippers[0].id != undefined">
+          <tr repeat.for="shipper of shippers">
+            <td>
+              ${shipper.shipperName}
+            </td>
+            <td>
+              ${shipper.shipperAddress}
+            </td>
+            <td>
+              ${shipper.phoneNumber}
+            </td>
+            <td>
+              ${shipper.ordersCount}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: shippersEdit; params.bind: {id: shipper.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: shippersDetails; params.bind: {id: shipper.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: shippersDelete; params.bind: {id: shipper.id}" if.bind="shipper != null && shipper.ordersCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: shippersDelete; params.bind: {id: shipper.id}" if.bind="shipper != null && shipper.ordersCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+
+</template>

@@ -1,0 +1,89 @@
+html, body, .container-fluid, .wrapper, .content-wrapper{
+    background: #F5EDBC;
+}
+p, .table{
+    margin: 0;
+}
+
+#register-login-button-margin {
+    margin-right: 1vh;
+}
+
+.login-card-body, .register-card-body {
+    background-color: #343A40;
+    color: #C0C9D2;
+}
+
+.create-button-div {
+    max-width: 20vh;
+    min-width: 20vh;
+}
+
+.alert {
+    margin-top: 5px;
+}
+
+.margin-top-thingy {
+    margin-top: 5px;
+}
+
+.select2-selection__rendered {
+    line-height: 31px !important;
+}
+.select2-container .select2-selection--single {
+    height: 35px !important;
+    width: 100%;
+}
+.select2-selection__arrow {
+    height: 34px !important;
+    width: 100%;
+}
+.select2 {
+    width:100%!important;
+}
+
+.hr-hidden {
+    visibility: hidden;
+}
+
+.bg-yellow{
+    background-color: #000000;
+}
+
+.sidebar-dark {
+    background-color: #000000;
+    color: #74797D;
+}
+
+.language-select, select option{
+    background: #000000 !important;
+    color: #FDC204 !important;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+}
+
+.language-select:hover, select option{
+    cursor: pointer;
+    border-radius: 10px;
+    background: #222122 !important;
+    color: #ffffff !important;
+}
+/* scrollbar */
+/*
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FDC204;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FDC204;
+}*/

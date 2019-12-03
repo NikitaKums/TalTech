@@ -1,0 +1,41 @@
+@model ProductInCategoryCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Edit;
+}
+
+<h1>@Resources.Views.Common.Edit @Resources.Domain.ProductInCategory.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.Edit @Resources.Domain.ProductInCategory.Header</h3>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ProductInCategory.Product" class="control-label"></label>
+                        <select asp-for="ProductInCategory.ProductId" class="form-control select-auto-complete" asp-items="Model.ProductSelectList"></select>
+                        <span asp-validation-for="ProductInCategory.ProductId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductInCategory.Category" class="control-label"></label>
+                        <select asp-for="ProductInCategory.CategoryId" class="form-control select-auto-complete" asp-items="Model.CategorySelectList"></select>
+                        <span asp-validation-for="ProductInCategory.CategoryId" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="ProductInCategory.Id"/>
+                    <button type="submit" class="btn bg-success float-right">
+                        @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+                    </button>
+                    <a asp-action="Details" asp-route-id="@Model.ProductInCategory.CategoryId"  asp-controller="Categories" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,0 +1,49 @@
+<template>
+  <h1>ManuFacturer Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Manufacturer name
+            </th>
+            <th>
+              Address
+            </th>
+            <th>
+              PhoneNumber
+            </th>
+            <th>
+              Products with this Manufacturer
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${manuFacturer.manuFacturerName}
+            </td>
+            <td>
+              ${manuFacturer.aadress}
+            </td>
+            <td>
+              ${manuFacturer.phoneNumber}
+            </td>
+            <td>
+              ${manuFacturer.productCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: manufacturersIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="manuFacturer != null" route-href="route: manufacturersEdit; params.bind: {id: manuFacturer.id}">Edit ManuFacturer <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

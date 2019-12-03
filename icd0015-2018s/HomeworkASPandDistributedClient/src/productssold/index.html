@@ -1,0 +1,53 @@
+<template>
+  <h1>ProductSold Index</h1>
+  <hr/>
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productssoldCreate" if.bind="productsSold[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productssoldCreate" if.bind="productsSold[0].id == undefined">Create New</a>
+  </div>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Product Sold Time
+          </th>
+          <th>
+            Product
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsSold[0].id != undefined">
+        <tr repeat.for="productSold of productsSold">
+          <td>
+            ${productSold.quantity}
+          </td>
+          <td>
+            ${productSold.dateString}
+          </td>
+          <td>
+            ${productSold.productName}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" if.bind="productSold != undefined" route-href="route: productssoldEdit; params.bind: {id: productSold.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" if.bind="productSold != undefined" route-href="route: productssoldDetails; params.bind: {id: productSold.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" if.bind="productSold != undefined" route-href="route: productssoldDelete; params.bind: {id: productSold.id}">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>

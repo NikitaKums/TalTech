@@ -1,0 +1,74 @@
+<template>
+
+  <div>
+    <h1>Return Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: returnsCreate" if.bind="returns[0].id != undefined">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: returnsCreate" if.bind="returns[0].id == undefined">Create New</a> 
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Products in return
+            </th>
+            <th>
+              Shop
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="returns[0].id != undefined">
+          <tr repeat.for="return of returns">
+            <td>
+              ${return.description}
+            </td>
+            <td>
+              <span if.bind="return.productsReturnedCount == 0">${return.productsReturnedCount}</span>
+                <a if.bind="return.productsReturnedCount > 0" route-href="route: returnsDetails; params.bind: {id: return.id}">${return.productsReturnedCount}</a>
+            </td>
+            <td>
+              ${return.shopName}
+            </td>
+            <td>
+              <a route-href="route: productsreturnedCreate; params.bind: {id: return.id}" class="btn bg-warning btn-extra">
+                <i class="nav-icon fa fa-plus"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: returnsDetails; params.bind: {id: return.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-success btn-extra" route-href="route: returnsEdit; params.bind: {id: return.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: returnsDelete; params.bind: {id: return.id}" if.bind="return != null && return.productsReturnedCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: returnsDelete; params.bind: {id: return.id}" if.bind="return != null && return.productsReturnedCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+</template>

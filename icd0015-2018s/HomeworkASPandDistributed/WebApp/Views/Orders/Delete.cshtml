@@ -1,0 +1,43 @@
+@model BLL.App.DTO.DomainLikeDTO.Order
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Delete;
+}
+
+<h1>@Resources.Views.Common.Delete @Resources.Domain.Order.Header</h1>
+<hr />
+<div class="col-md-6">
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">@Resources.Views.Shared._Layout.LayoutAreYouSureYouWantToDeleteThis?</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Description)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Description)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.OrderCreationTime)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.OrderCreationTime)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Shipper)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Shipper.ShipperName)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Shop)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Shop.ShopName)" disabled>
+            </div>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" value="Delete" class="btn bg-danger float-right">@Resources.Views.Common.Delete <i class="nav-icon fa fa-trash"></i></a>
+                <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

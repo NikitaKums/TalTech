@@ -1,0 +1,55 @@
+@model BLL.App.DTO.DomainLikeDTO.Order
+@{
+    ViewData["Title"] = @Resources.Domain.Order.OrderReceived;
+}
+<h1>@Resources.Domain.Order.OrderReceived</h1>
+<hr/>
+<div class="col-md-8">
+    <div class="create-button-div">
+        <form asp-action="ProcessReceivedOrder">
+            <input type="hidden" asp-for="@Model.Id"/>
+            @if (@Model.ProductsInOrder.Count == 0)
+            {
+                <button type="submit" class="btn btn-block btn-primary disabled">@Resources.Domain.Order.ReceivedAllItems</button>
+            }
+            else
+            {
+                <button type="submit" class="btn btn-block btn-primary">@Resources.Domain.Order.ReceivedAllItems</button>
+            }
+        </form>
+    </div>
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Resources.Domain.Order.Quantity
+                    </th>
+                    <th>
+                        @Resources.Domain.Order.ProductName
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.ProductsInOrder)
+                {
+                    <tr>
+                        <td>
+                            @item.Quantity
+                        </td>
+                        <td>
+                            <a asp-controller="Products" asp-action="Details" asp-route-id="@item.ProductId">@Html.DisplayFor(model => item.Product.ProductName)</a>
+                        </td>
+                        <td>
+                            <a asp-controller="ProductsInOrder" asp-action="ProductInOrderReceived" asp-route-id="@item.Id" class="btn bg-primary">@Resources.Domain.Order.ItemReceived</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+</div>

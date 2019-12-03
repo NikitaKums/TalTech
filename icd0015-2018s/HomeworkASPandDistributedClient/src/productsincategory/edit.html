@@ -1,0 +1,37 @@
+<template>
+  <require from="select2-custom-attribute"></require>
+  <h1>Edit Product in Category</h1>
+  <hr/>
+  <div>
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Product in Category</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="ProductInCategory_ProductId">Product</label>
+              <select select2 class="form-control select-auto-complete" id="ProductInCategory_ProductId" value.bind="productInCategory.productId">
+                <option repeat.for="product of products" model.bind="product.id">
+                  ${product.productName}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="ProductInCategory_CategoryId">Category</label>
+              <select select2 class="form-control select-auto-complete" id="ProductInCategory_CategoryId" value.bind="productInCategory.categoryId">
+                <option repeat.for="category of categories" model.bind="category.id">
+                  ${category.categoryName}
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Product in Category</button>
+            <a class="btn btn-default" if.bind="returnCategoryId != undefined" route-href="route: categoriesDetails; params.bind: {id: returnCategoryId}">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

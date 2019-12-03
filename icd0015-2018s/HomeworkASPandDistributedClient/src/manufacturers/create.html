@@ -1,0 +1,39 @@
+<template>
+  <h1>Create ManuFacturer</h1>
+  <hr />
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new ManuFacturer</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="control-label" for="ManuFacturerName">ManuFacture name</label>
+              <input class="form-control" type="text" id="ManuFacturerName" name="ManuFacturerName" value.bind="manuFacturer.manuFacturerName" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Address">Address</label>
+              <input class="form-control" type="text" id="Address" name="Address" value.bind="manuFacturer.aadress"  />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="PhoneNumber">PhoneNumber</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                </div>
+                <input class="form-control" type="text" id="PhoneNumber" maxlength="128" name="PhoneNumber" value.bind="manuFacturer.phoneNumber" />
+              </div>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create</button>
+            <a class="btn btn-default" route-href="route: manufacturersIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

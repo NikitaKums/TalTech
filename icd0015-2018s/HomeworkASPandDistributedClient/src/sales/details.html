@@ -1,0 +1,83 @@
+<template>
+  <h1>Sale Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Sale initial creation time
+            </th>
+            <th>
+              Products sold count
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${sale.description}
+            </td>
+            <td>
+              ${sale.dateString}
+            </td>
+            <td>
+              ${sale.productsSoldCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: salesIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="sale != null" route-href="route: salesEdit; params.bind: {id: sale.id}">Edit Sale <i class="fa fa-pencil"></i></a>
+    </div>
+
+    <hr/>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Product name
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product selling time
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="productsSold[0].id != undefined">
+          <tr repeat.for="productsSold of productsSold">
+            <td>
+              <a route-href="route: productsDetails; params.bind: {id: productsSold.productId}">
+                ${productsSold.productName}
+              </a>
+            </td>
+            <td>
+              ${productsSold.quantity}
+            </td>
+            <td>
+              ${productsSold.dateString}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: productssoldEdit; params.bind: {id: productsSold.id}"><i class="nav-icon fa fa-pencil"></i></a>
+              <a class="btn bg-danger btn-extra" route-href="route: productssoldDelete; params.bind: {id: productsSold.id}"><i class="nav-icon fa fa-trash"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+  </div>
+</template>

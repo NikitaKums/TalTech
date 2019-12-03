@@ -1,0 +1,23 @@
+<form method="post" action="?cmd=save">
+    <input type="hidden" name="id" value="{{ $user_data->id }}">
+    <table class="input_table">
+        <tr>
+            <td>Eesnimi: <input name="firstName" placeholder="Eesnimi..." value="{{ $user_data->firstName }}"></td>
+        </tr>
+        <tr>
+            <td>Perekonnanimi: <input name="lastName" placeholder="Perekonnanimi..." value="{{ $user_data->lastName }}"> </td>
+        </tr>
+        <tr>
+            <td>Telefon: <input name="phone1" placeholder="Telefoninumber..." value="{{ $user_data->phones[0] }}"> </td>
+        </tr>
+        <tr>
+            <td><input name="phone2" placeholder="Telefoninumber..." value="{{ $user_data->phones[1] }}"> </td>
+        </tr>
+        <tr>
+            <td><input name="phone3" placeholder="Telefoninumber..." value="{{ $user_data->phones[2] }}"> </td>
+        </tr>
+        <tr>
+            <td><input name="submit-button" type="submit" class="save_button" value="Salvesta"></td>
+        </tr>
+    </table>
+</form><!-- need to push -->

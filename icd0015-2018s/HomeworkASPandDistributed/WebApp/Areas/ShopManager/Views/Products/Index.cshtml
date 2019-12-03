@@ -1,0 +1,137 @@
+@model PaginatedList<BLL.App.DTO.DomainLikeDTO.Product>
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Index;
+}
+<a asp-action="Index">
+    <h1>@Resources.Domain.Product.Header @Resources.Views.Common.Index</h1>
+</a>
+<hr/>
+<div class="create-button-div">
+    <a asp-action="Create" class="btn btn-block btn-warning">@Resources.Views.Common.CreateNew</a>
+</div>
+<form asp-action="Index" method="get">
+    <partial name="_SearchPartial"/>
+</form>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ManufacturerCodeSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.ManuFacturerItemCode
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ShopCodeSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.ShopCode
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ProductNameSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.ProductName
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["BuyPriceSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.BuyPrice
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["PercentageSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.PercentageAddedToBuyPrice
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SellPriceSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.SellPrice
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["QuantitySortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.Quantity
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["WeightSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.Weight
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["LengthSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.Length
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ManufacturerNameSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Product.Manufacturer
+                    </a>
+                </th>
+                <th>
+                    @Resources.Domain.Product.Inventory
+                </th>
+                <th>
+                    @Resources.Domain.Product.Shop
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ManuFacturerItemCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShopCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BuyPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PercentageAddedToBuyPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SellPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Manufacturer.ManuFacturerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Inventory.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shop.ShopName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra">
+                            <i class="nav-icon fa fa-pencil"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                            <i class="nav-icon fa fa-info"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra">
+                            <i class="nav-icon fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<partial name="_PaginationPartial"/>

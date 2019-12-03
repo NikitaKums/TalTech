@@ -1,0 +1,16 @@
+<div class="input-group search-div">
+    <input type="text" class="form-control" name="searchString" value="@ViewData["CurrentFilter"]"/>
+    <div class="input-group-prepend input-group-prepend-extras">
+        <span class="input-group-text input-group-text-extras">
+            <button type="submit" class="btn-extra-search">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+    <div style="margin-left: 0.5%">
+        <a asp-action="Index" class="btn btn-danger">
+            <i class="fa fa-xing"></i>
+            @Resources.Views.Common.Reset
+        </a>
+    </div>
+</div>

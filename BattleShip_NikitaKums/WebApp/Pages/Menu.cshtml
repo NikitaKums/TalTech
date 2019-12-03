@@ -1,0 +1,23 @@
+@page
+@model MenuModel
+@{
+     ViewData["Title"] = "Menu";
+ }
+<div>
+    <span asp-validation-for="FailedToGenerateBoard" class="alert-danger"></span>
+    <form method="post">
+        Enter your name: <input asp-for="Name" class="form-control textBoxWidth" id="menu"/>
+        <span asp-validation-for="Name"></span> <br/>
+        <input name="submit" type="submit" class="btn" value="PlayGame" id="PlayGame"/>
+        <br/>
+        <br/>
+        <input name="submit" type="submit" class="btn cancel" value="Settings" id="Settings"/>
+        <br/>
+        <br/>
+        <input name="submit" type="submit" class="btn cancel" value="Saves" id="Saves"/>
+    </form>
+</div>
+
+@section scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

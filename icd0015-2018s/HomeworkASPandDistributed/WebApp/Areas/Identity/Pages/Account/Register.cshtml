@@ -1,0 +1,66 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = @Resources.Views.Shared._Layout.LayoutRegister;
+}
+
+
+<body class="hold-transition register-page">
+<div class="register-box">
+    <div class="login-logo">
+        <a asp-area="" asp-controller="Home" asp-action="Index"><b>Shop</b>App</a>
+    </div>
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">@Resources.Views.Shared._Layout.LayoutRegisterAsANewUser</p>
+
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="@Resources.Views.Shared._Layout.LayoutFirstName" asp-for="Input.FirstName">
+                <div class="input-group-append">
+                    <span class="fa fa-user-circle input-group-text"></span>
+                </div>
+            </div>
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="@Resources.Views.Shared._Layout.LayoutEmail" asp-for="Input.Email">
+                <div class="input-group-append">
+                    <span class="fa fa-envelope input-group-text"></span>
+                </div>
+            </div>
+            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="@Resources.Views.Shared._Layout.LayoutLastName" asp-for="Input.LastName">
+                <div class="input-group-append">
+                    <span class="fa fa-user-circle input-group-text"></span>
+                </div>
+            </div>
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="@Resources.Views.Shared._Layout.LayoutPassword" asp-for="Input.Password">
+                <div class="input-group-append">
+                    <span class="fa fa-key input-group-text"></span>
+                </div>
+            </div>
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="@Resources.Views.Shared._Layout.LayoutConfirmPassword" asp-for="Input.ConfirmPassword">
+                <div class="input-group-append">
+                    <span class="fa fa-key input-group-text"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">@Resources.Views.Shared._Layout.LayoutRegister</button>
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary btn-block btn-flat">@Resources.Views.Shared._Layout.LayoutLogin</a>
+        </form>
+
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

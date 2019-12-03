@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_3sdp"
+    android:background="@color/appBlack">
+
+
+    <TextView
+        android:id="@+id/textViewSessionId"
+        style="@style/recyclerViewRow"
+        android:text="@string/session_id"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSessionIdData"
+        style="@style/recyclerViewRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTotalDistance"
+        style="@style/recyclerViewRow"
+        android:textStyle="bold"
+        android:text="@string/total_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSessionId" />
+
+    <TextView
+        android:id="@+id/textViewTotalDistanceData"
+        style="@style/recyclerViewRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSessionIdData" />
+
+    <Button
+        android:id="@+id/buttonDelete"
+        style="@style/LayoutControlButtons"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTotalTime"
+        style="@style/recyclerViewRow"
+        android:textStyle="bold"
+        android:text="@string/total_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalDistance" />
+
+    <TextView
+        android:id="@+id/textViewTotalPace"
+        style="@style/recyclerViewRow"
+        android:textStyle="bold"
+        android:text="@string/pace_km_m"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalTime" />
+
+    <TextView
+        android:id="@+id/textViewTotalTimeData"
+        style="@style/recyclerViewRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalDistanceData" />
+
+    <TextView
+        android:id="@+id/textViewPaceData"
+        style="@style/recyclerViewRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTotalTimeData" />
+
+    <Button
+        android:id="@+id/buttonExport"
+        style="@style/LayoutControlButtons"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/export"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
+</android.support.constraint.ConstraintLayout>

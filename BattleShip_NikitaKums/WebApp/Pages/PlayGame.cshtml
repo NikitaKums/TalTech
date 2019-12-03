@@ -1,0 +1,111 @@
+@page
+@model PlayGameModel
+@{
+    ViewData["Title"] = "Game";
+}
+<div class="floatLeft">
+    GamingBoard:
+    <table class="game one">
+        <tr>
+            @for (var i = 0; i < @Model.Player.GamingBoard.BoardSize; i++)
+            {
+                if (i == 0)
+                {
+                    <td class="coordinates game"></td>
+                }
+                <td class="coordinates game">@Model.LettersForWebBoard[i]</td>
+            }
+        </tr>
+        @for (var i = 0; i < @Model.Player.GamingBoard.BoardSize; i++)
+        {
+            <tr>
+                <td class="coordinates game">
+                    @i
+                </td>
+                @for (var j = 0; j < @Model.Player.GamingBoard.BoardSize; j++)
+                {
+                    <td class="game">@(@Model.GetSymbolsForWebBoard(@Model.Player.GamingBoard[i, j]))</td>
+                }
+            </tr>
+        }
+    </table>
+</div>
+<div class="floatRight">
+        TrackingBoard:
+        <table class="game two">
+            <tr>
+                @for (var i = 0; i < @Model.Player.TrackingBoard.BoardSize; i++)
+                {
+                    if (i == 0)
+                    {
+                        <td class="coordinates game"></td>
+                    }
+                    <td class="coordinates game">@Model.LettersForWebBoard[i]</td>
+                }
+            </tr>
+            @for (var i = 0; i < @Model.Player.TrackingBoard.BoardSize; i++)
+            {
+                <tr>
+                    <td class="coordinates game">
+                        @i
+                    </td>
+                    @for (var j = 0; j < @Model.Player.TrackingBoard.BoardSize; j++)
+                    {
+                        <td class="game">@(@Model.GetSymbolsForWebBoard(@Model.Player.TrackingBoard[i, j]))</td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+@if (Model.XCord != null)
+{
+    <br/>
+    <div id="results">
+        <span>Results: </span>
+        <br/>
+        <span>Your shot: </span>
+        <span> X: @Model.XCord | Y: @Model.YCord</span>
+        <br/>
+        <span>Computer shot: </span>
+        @{var computerCoordinates = @Model.Computer.MovesDoneList.Last();}
+        <span> X: @computerCoordinates.XCord | Y: @computerCoordinates.YCord</span>
+    </div>
+}
+
+@if (!Model.Winner)
+{
+    <br/>
+    <form method="post" autocomplete="off">
+        <div>
+            X coordinate: <input asp-for="XCord" class="form-control textBoxWidth"/>
+            <span class="alert-danger" asp-validation-for="XCord"></span> <br/>
+            Y coordinate: <input asp-for="YCord" class="form-control textBoxWidth"/>
+            <span class="alert-danger" asp-validation-for="YCord"></span> <br/>
+    
+        </div>
+        <input type="hidden" asp-for="Index" value="@Model.Index"/>
+        <input type="submit" value="Make move" class="btn"/>
+    </form>
+    <br/>
+    <input type="submit" id="myButton" class="btn" value="Exit to menu" onclick="redirect()"/>
+}
+else
+{
+    <br/>
+    <div>
+        <span id="winner">(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ @Model.Message ✧ﾟ･: *ヽ(◕ヮ◕ヽ)</span>
+        <br/>
+        <span id="winner"> HAS WON!!!!</span>
+        <br/>
+        <input type="submit" id="myButton" class="btn" value="Continue" onclick="redirect()"/>
+    </div>
+}
+
+@section scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "Menu";
+    };
+</script>

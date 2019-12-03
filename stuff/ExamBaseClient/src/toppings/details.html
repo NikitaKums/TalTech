@@ -1,0 +1,27 @@
+<template>
+  <h1>Details</h1>
+
+  <div>
+    <h4>Topping</h4>
+    <hr />
+    <dl class="row">
+      <dt class = "col-sm-2">
+        Description
+      </dt>
+      <dd class = "col-sm-10">
+        ${topping.description}
+      </dd>
+      <dt class = "col-sm-2">
+        Price
+      </dt>
+      <dd class = "col-sm-10">
+        ${topping.pirce}
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <a if.bind="topping.id != undefined" route-href="route: toppingsEdit; params.bind: {id: topping.id}">Edit</a> |
+    <a route-href="route: toppingsIndex">Back to List</a>
+  </div>
+
+</template>

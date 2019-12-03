@@ -1,0 +1,83 @@
+<template>
+  <h1>Defect Details</h1>
+  <hr/>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Shop
+            </th>
+            <th>
+              Products with this defect type
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${defect.description}
+            </td>
+            <td>
+              ${defect.shopName}
+            </td>
+            <td>
+              ${defect.productsWithDefectCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: defectsIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="defect != null" route-href="route: defectsEdit; params.bind: {id: defect.id}">Edit defect <i class="fa fa-pencil"></i></a>
+    </div>
+    <hr/>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Product name
+            </th>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product defect recording time
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="productsWithDefect[0].id != undefined">
+          <tr repeat.for="productWithDefect of productsWithDefect">
+            <td>
+              <a route-href="route: productsDetails; params.bind: {id: productWithDefect.productId}">
+                ${productWithDefect.productName}
+              </a>
+            </td>
+            <td>
+              ${productWithDefect.quantity}
+            </td>
+            <td>
+              ${productWithDefect.dateString}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: productswithdefectEdit; params.bind: {id: productWithDefect.id}"><i class="nav-icon fa fa-pencil"></i></a>
+              <a class="btn bg-danger btn-extra" route-href="route: productswithdefectDelete; params.bind: {id: productWithDefect.id}"><i class="nav-icon fa fa-trash"></i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</template>

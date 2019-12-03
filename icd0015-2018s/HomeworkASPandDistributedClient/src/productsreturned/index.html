@@ -1,0 +1,59 @@
+<template>
+
+  <h1>ProductReturned Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productsreturnedCreate" if.bind="productsReturned[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productsreturnedCreate" if.bind="productsReturned[0].id == undefined">Create New</a>  </div>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Quantity
+          </th>
+          <th>
+            ProductReturnedTime
+          </th>
+          <th>
+            Product
+          </th>
+          <th>
+            Return Description
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsReturned[0].id != undefined">
+        <tr repeat.for="productReturned of productsReturned">
+          <td>
+            ${productReturned.quantity}
+          </td>
+          <td>
+            ${productReturned.dateString}
+          </td>
+          <td>
+            ${productReturned.productName}
+          </td>
+          <td>
+            ${productReturned.returnDescription}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" if.bind="productReturned != undefined" route-href="route: productsreturnedEdit; params.bind: {id: productReturned.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" if.bind="productReturned != undefined" route-href="route: productsreturnedDetails; params.bind: {id: productReturned.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" if.bind="productReturned != undefined" route-href="route: productsreturnedDelete; params.bind: {id: productReturned.id}">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>

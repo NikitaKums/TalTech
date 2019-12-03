@@ -1,0 +1,27 @@
+@using Domain.Identity
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a class="nav-link navbar-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="@Resources.Views.Shared._Layout.LayoutManage">@Resources.Views.Shared._Layout.LayoutHello @((await UserManager.GetUserAsync(User)).FirstLastName) @User.Identity.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="btn btn-block btn-outline-danger btn-flat">@Resources.Views.Shared._Layout.LayoutLogout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item" id="register-login-button-margin">
+        <a class="btn btn-block btn-outline-warning btn-flat" asp-area="Identity" asp-page="/Account/Register">@Resources.Views.Shared._Layout.LayoutRegister</a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-block btn-outline-warning btn-flat" asp-area="Identity" asp-page="/Account/Login">@Resources.Views.Shared._Layout.LayoutLogin</a>
+    </li>
+}
+</ul>

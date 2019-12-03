@@ -1,0 +1,67 @@
+<template>
+  <h1>Inventory Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: inventorysCreate" if.bind="inventorys.length == 0 && shop.id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: inventorysCreate" if.bind="inventorys.length == 1" >Create New</a>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Description
+          </th>
+          <th>
+            Inventory creation time
+          </th>
+          <th>
+            Products in inventory
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="inventorys[0].id != undefined">
+        <tr repeat.for="inventory of inventorys">
+          <td>
+            ${inventory.description}
+          </td>
+          <td>
+            ${inventory.dateString}
+          </td>
+          <td>
+            ${inventory.productCount}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: inventorysEdit; params.bind: {id: inventory.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: inventorysDetails; params.bind: {id: inventory.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra disabled" route-href="route: inventorysDelete; params.bind: {id: inventory.id}" if.bind="inventory != null && inventory.productCount > 0">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: inventorysDelete; params.bind: {id: inventory.id}" if.bind="inventory != null && inventory.productCount == 0">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <compose view="../pagination_partial.html"></compose>
+</template>

@@ -1,0 +1,32 @@
+<template>
+  <h1>Create</h1>
+
+  <h4>PizzaInOrder</h4>
+  <hr />
+  <div class="row">
+    <div class="col-md-4">
+      <form method="post" submit.delegate="submit()">
+        <div class="form-group">
+          <label class="control-label">Order</label>
+          <input class="form-control" value.bind="order.description" disabled />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="PizzaInOrder_PizzaId">Pizza</label>
+          <select class="form-control" id="PizzaInOrder_PizzaId" name="PizzaInOrder.PizzaId" value.bind="pizzaInOrder.pizzaId">
+            <option repeat.for="pizza of pizzas" value.bind="pizza.id">
+              ${pizza.description}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    <a route-href="route: ordersIndex">Back to List</a>
+  </div>
+
+</template>

@@ -1,0 +1,71 @@
+@model PaginatedList<BLL.App.DTO.DomainLikeDTO.Return>
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Index;
+}
+
+<div>
+    
+    <h1>@Resources.Domain.Return.Header @Resources.Views.Common.Index</h1>
+    <hr/>
+    <div class="create-button-div">
+        <a asp-action="Create" class="btn btn-block btn-warning">@Resources.Views.Common.CreateNew</a>
+    </div>
+    <form asp-action="Index" method="get">
+        <partial name="_SearchPartial"/>
+    </form>
+
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["DescriptionSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.Return.Description
+                        </a>
+                    </th>
+                    <th>
+                        @Resources.Domain.Return.Shop
+                    </th>
+                    <th>
+                        @Resources.Domain.Return.ProductsInReturn
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Shop.ShopName)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">@item.ProductsReturned.Count</a>
+                        </td>
+                        <td>
+                            <a asp-action="AddProductToReturn" asp-route-id="@item.Id" class="btn bg-warning btn-extra">
+                                <i class="nav-icon fa fa-plus"></i>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                                <i class="nav-icon fa fa-info"></i>
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra">
+                                <i class="nav-icon fa fa-pencil"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra">
+                                <i class="nav-icon fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>  
+    <partial name="_PaginationPartial"/>
+</div>

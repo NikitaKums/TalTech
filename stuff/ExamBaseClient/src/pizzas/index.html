@@ -1,0 +1,59 @@
+<template>
+  <h1>Index</h1>
+
+  <p>
+    <a class="btn btn-success"  route-href="route: pizzasCreate">Create New</a>
+  </p>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Description
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Toppings
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="pizza of pizzas">
+      <td>
+        ${pizza.description}
+      </td>
+      <td>
+        ${pizza.pirce}
+      </td>
+      <td if.bind="pizza.toppingsOnPizza.length > 0">
+        <span repeat.for="toppingOnPizza of pizza.toppingsOnPizza">
+          <a route-href="route: toppingsonpizzaDetails; params.bind: {id: toppingOnPizza.id}">${toppingOnPizza.toppingDescription}</a><br>
+        </span>
+      </td>
+      <td if.bind="pizza.toppingsOnPizza.length == 0">
+        ---
+      </td>
+      <td>
+        <a route-href="route: pizzasEdit; params.bind: {id: pizza.id}">Edit</a> |
+        <a route-href="route: pizzasDetails; params.bind: {id: pizza.id}">Details</a> |
+        <a route-href="route: pizzasDelete; params.bind: {id: pizza.id}">Delete</a> | <br>
+        <a route-href="route: toppingsonpizzaCreate; params.bind: {id: pizza.id}">Add topping</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</template>

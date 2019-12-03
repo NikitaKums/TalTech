@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_5PuzzleiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="elg-PI-acq">
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VAB-rI-Byu">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="385"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-s1-oeK">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                                <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="startButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ory-Cl-rFa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fD0-2z-hgG">
+                                                <rect key="frame" x="0.0" y="67" width="374" height="37"/>
+                                                <color key="backgroundColor" red="1" green="0.87730854564299454" blue="0.54342560007920415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="ResetButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0I-d3-wjs"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTS-AS-ngR">
+                                                <rect key="frame" x="0.0" y="366" width="374" height="19"/>
+                                                <color key="backgroundColor" red="0.2463186107" green="0.22884284360000001" blue="0.36269430050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fD0-2z-hgG" firstAttribute="top" relation="lessThanOrEqual" secondItem="ChP-s1-oeK" secondAttribute="bottom" constant="30" id="ErH-HT-pke"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="48t-Ly-eat">
+                                        <rect key="frame" x="0.0" y="393" width="374" height="385"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vmU-M9-Eeg">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="90.333333333333329"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="191" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-EV-P0F">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ia3-ef-rfK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="192" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giZ-ow-H0B">
+                                                        <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBr-Sf-NjK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="193" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdh-c5-iPd">
+                                                        <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H1P-Ic-nNl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="194" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieD-Mr-T3Y">
+                                                        <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="btI-Gp-dmO"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vc8-vg-12a">
+                                                <rect key="frame" x="0.0" y="98.333333333333371" width="374" height="90.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="291" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wg9-QC-aeO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mve-2c-hB1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="292" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-xo-lYb">
+                                                        <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0nC-wF-qUS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="293" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-Tx-WbV">
+                                                        <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LEJ-KP-T7H"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="294" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEN-9C-7JQ">
+                                                        <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJ1-tO-dXT"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="We3-uM-U4a">
+                                                <rect key="frame" x="0.0" y="196.66666666666663" width="374" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="391" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v26-OJ-UMn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="90"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWo-Jl-xUX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="392" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGO-yp-2kH">
+                                                        <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="90"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="10">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iF9-lZ-2U2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="393" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OB-mu-deH">
+                                                        <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="90"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="11">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wo-1f-Tbz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="394" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPP-U7-lhR">
+                                                        <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="90"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="12">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mif-Cz-5zf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lAq-qL-92E">
+                                                <rect key="frame" x="0.0" y="294.66666666666663" width="374" height="90.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="491" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWs-xz-0li">
+                                                        <rect key="frame" x="0.0" y="0.0" width="87.666666666666671" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="13">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dGa-of-KYz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="492" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR7-hg-jkU">
+                                                        <rect key="frame" x="95.666666666666686" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="14">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wnG-md-d5Q"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="493" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSO-aZ-rca">
+                                                        <rect key="frame" x="191" y="0.0" width="87.666666666666686" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title="15">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8a2-Vt-jny"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="494" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcm-eV-qHx">
+                                                        <rect key="frame" x="286.66666666666669" y="0.0" width="87.333333333333314" height="90.333333333333329"/>
+                                                        <color key="backgroundColor" red="1" green="0.87730854560000004" blue="0.54342560009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                        <state key="normal" title=" ">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="GameButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XWS-dZ-CaU"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24631861069727182" green="0.22884284362296908" blue="0.36269430050932638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="elg-PI-acq" secondAttribute="trailing" constant="20" id="5Gi-WT-oEB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="elg-PI-acq" secondAttribute="bottom" constant="20" id="7pK-NW-N3Y"/>
+                            <constraint firstItem="elg-PI-acq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BtR-eg-xXB"/>
+                            <constraint firstItem="elg-PI-acq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="NxG-kN-QTw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="resetButton" destination="fD0-2z-hgG" id="dpm-Rt-EhQ"/>
+                        <outlet property="startButton" destination="ChP-s1-oeK" id="wFm-Op-bAh"/>
+                        <outlet property="timeLabel" destination="HTS-AS-ngR" id="Aq0-AX-98u"/>
+                        <outletCollection property="Buttons" destination="UWs-xz-0li" collectionClass="NSMutableArray" id="9wy-Ex-9fd"/>
+                        <outletCollection property="Buttons" destination="v26-OJ-UMn" collectionClass="NSMutableArray" id="YVJ-Vk-Vyo"/>
+                        <outletCollection property="Buttons" destination="FEN-9C-7JQ" collectionClass="NSMutableArray" id="yXd-lv-YRp"/>
+                        <outletCollection property="Buttons" destination="ieD-Mr-T3Y" collectionClass="NSMutableArray" id="bxx-Rh-rCZ"/>
+                        <outletCollection property="Buttons" destination="giZ-ow-H0B" collectionClass="NSMutableArray" id="p7O-of-ll1"/>
+                        <outletCollection property="Buttons" destination="jGO-yp-2kH" collectionClass="NSMutableArray" id="faN-LP-O7F"/>
+                        <outletCollection property="Buttons" destination="AR7-hg-jkU" collectionClass="NSMutableArray" id="0ro-b8-KW4"/>
+                        <outletCollection property="Buttons" destination="BPP-U7-lhR" collectionClass="NSMutableArray" id="xQO-tw-auR"/>
+                        <outletCollection property="Buttons" destination="sSO-aZ-rca" collectionClass="NSMutableArray" id="sBE-YW-0Rg"/>
+                        <outletCollection property="Buttons" destination="oNl-Tx-WbV" collectionClass="NSMutableArray" id="MwV-4d-x6S"/>
+                        <outletCollection property="Buttons" destination="AcY-EV-P0F" collectionClass="NSMutableArray" id="zd3-JO-vrf"/>
+                        <outletCollection property="Buttons" destination="4OB-mu-deH" collectionClass="NSMutableArray" id="Kcb-El-gak"/>
+                        <outletCollection property="Buttons" destination="Vdh-c5-iPd" collectionClass="NSMutableArray" id="xIA-QI-O6C"/>
+                        <outletCollection property="Buttons" destination="Wg9-QC-aeO" collectionClass="NSMutableArray" id="IUr-sN-Dsh"/>
+                        <outletCollection property="Buttons" destination="sxX-xo-lYb" collectionClass="NSMutableArray" id="nrC-JD-aL1"/>
+                        <outletCollection property="Buttons" destination="Bcm-eV-qHx" collectionClass="NSMutableArray" id="siV-xH-sPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1119" y="-208"/>
+        </scene>
+    </scenes>
+</document>

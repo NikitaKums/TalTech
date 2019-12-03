@@ -1,0 +1,82 @@
+<template>
+  <require from="./css/adminlte/dist/css/adminlte.min.css"></require>
+  <require from="./css/adminlte/plugins/font-awesome/css/font-awesome.min.css"></require>
+  <require from="select2/dist/css/select2.min.css"></require>
+  <require from="./css/custom.css"></require>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-black navbar-dark border-bottom">
+
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#">
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item" id="register-login-button-margin" show.bind="appConfig.jwt == null">
+            <a class="btn btn-block btn-outline-warning btn-flat" route-href="route: identityRegister">Register</a>
+          </li>
+          <li class="nav-item" show.bind="appConfig.jwt == null">
+            <a class="btn btn-block btn-outline-warning btn-flat" route-href="route: identityLogin">Login</a>
+          </li>
+          <li class="nav-item" show.bind="appConfig.jwt != null">
+            <a class="btn btn-block btn-outline-danger btn-flat" route-href="route: identityLogout">Logout</a>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark elevation-4">
+      <!-- Brand Logo -->
+      <a class="brand-link" route-href="route: home">
+        <img src="./css/adminlte/dist/img/shopping-basket-red-512.png" alt="Shop" class="brand-image" style="opacity: .8">
+        <span class="brand-text font-weight-light">Shop App</span>
+      </a>
+
+      <!-- Sidebar Menu -->
+      <div class="sidebar">
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a class="nav-link" route-href="route: home">
+                <i class="nav-icon fa fa-home"></i>
+                <p>Home</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" title="Manage">
+                <i class="nav-icon fa fa-user"></i>
+                <p>Account</p>
+              </a>
+            </li>
+            <li class="nav-header">TABLES</li>
+            
+            <li class="nav-item" repeat.for="nav of router.navigation">
+              <a class="nav-link" href.bind="nav.href">
+                <i class="nav-icon fa fa-table"></i>
+                <p>${nav.title}</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </aside>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+       <!-- <partial name="_CookieConsentPartial"/> -->
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+  <!-- <footer class="main-footer fixed-bottom">
+      test
+  </footer> -->
+</template>

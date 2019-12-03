@@ -1,0 +1,59 @@
+<template>
+  <h1>ProductWithDefect Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: productswithdefectCreate" if.bind="productsWithDefect[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: productswithdefectCreate" if.bind="productsWithDefect[0].id == undefined">Create New</a>
+  </div>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Defect Recording Time
+          </th>
+          <th>
+            Product Name
+          </th>
+          <th>
+            Defect Description
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsWithDefect[0].id != undefined">
+        <tr repeat.for="productWithDefect of productsWithDefect">
+          <td>
+            ${productWithDefect.quantity}
+          </td>
+          <td>
+            ${productWithDefect.dateString}
+          </td>
+          <td>
+            ${productWithDefect.productName}
+          </td>
+          <td>
+            ${productWithDefect.defectDescription}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productswithdefectEdit; params.bind: {id: productWithDefect.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: productswithdefectDetails; params.bind: {id: productWithDefect.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: productswithdefectDelete; params.bind: {id: productWithDefect.id}">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</template>

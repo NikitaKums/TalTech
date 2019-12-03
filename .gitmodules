@@ -1,0 +1,57 @@
+[submodule "algorithms-and-datastructures/intro"]
+	path = algorithms-and-datastructures/intro
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/intro.git
+[submodule "algorithms-and-datastructures/homework1"]
+	path = algorithms-and-datastructures/homework1
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework1.git
+[submodule "algorithms-and-datastructures/homework2"]
+	path = algorithms-and-datastructures/homework2
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework2.git
+[submodule "algorithms-and-datastructures/homework3"]
+	path = algorithms-and-datastructures/homework3
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework3.git
+[submodule "algorithms-and-datastructures/homework4"]
+	path = algorithms-and-datastructures/homework4
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework4.git
+[submodule "algorithms-and-datastructures/homework5"]
+	path = algorithms-and-datastructures/homework5
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework5.git
+[submodule "algorithms-and-datastructures/homework6"]
+	path = algorithms-and-datastructures/homework6
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework6.git
+[submodule "algorithms-and-datastructures/homework7"]
+	path = algorithms-and-datastructures/homework7
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/homework7.git
+[submodule "BattleShip_NikitaKums"]
+	path = BattleShip_NikitaKums
+	url = https://github.com/NikitaKums/BattleShip_NikitaKums.git
+[submodule "icd0011"]
+	path = icd0011
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/icd0011.git
+[submodule "icd0007"]
+	path = icd0007
+	url = https://NikitaKumsTTU@bitbucket.org/NikitaKumsTTU/icd0007.git
+[submodule "stuff"]
+	path = stuff
+	url = https://github.com/NikitaKums/stuff.git
+[submodule "icd0015-2018s"]
+	path = icd0015-2018s
+	url = https://github.com/NikitaKums/icd0015-2018s.git
+[submodule "icd0017-2018s"]
+	path = icd0017-2018s
+	url = https://github.com/NikitaKums/icd0017-2018s.git
+[submodule "iti0102"]
+	path = iti0102
+	url = https://github.com/NikitaKums/iti0102.git
+[submodule "ui-automation-with-selenium-parallel"]
+	path = ui-automation-with-selenium-parallel
+	url = https://github.com/NikitaKums/ui-automation-with-selenium-parallel.git
+[submodule "weatherreportercourceproject"]
+	path = weatherreportercourceproject
+	url = https://github.com/NikitaKums/weatherreportercourceproject.git
+[submodule "ui-automation-bonus-exercise"]
+	path = ui-automation-bonus-exercise
+	url = https://github.com/NikitaKums/ui-automation-bonus-exercise.git
+[submodule "tdd-practice"]
+	path = tdd-practice
+	url = https://github.com/NikitaKums/tdd-practice.git

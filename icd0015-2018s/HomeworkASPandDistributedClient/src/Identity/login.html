@@ -1,0 +1,46 @@
+<template>
+  <body class="hold-transition login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a route-href="route: home"><b>Shop</b>App</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in</p>
+        
+        <form id="account" method="post" submit.trigger="submit()">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="Input.Email" value.bind="login.email">
+            <div class="input-group-append">
+              <span class="fa fa-envelope input-group-text"></span>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="Input.Password" value.bind="login.password">
+            <div class="input-group-append">
+              <span class="fa fa-key input-group-text"></span>
+            </div>
+          </div>
+          <div>
+            <hr>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <a class="btn btn-primary btn-block btn-flat" route-href="route: home">Cancel</a>
+        </form>
+        
+        <div>
+          <hr>
+        </div>
+        <p class="mb-1">
+          <a id="forgot-password" href="#">Forgot your password?</a>
+        </p>
+        <p class="mb-0">
+          <a route-href="route: identityRegister">Register as a new user</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  </body>
+</template>

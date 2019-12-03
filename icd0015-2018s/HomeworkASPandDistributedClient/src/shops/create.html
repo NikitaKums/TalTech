@@ -1,0 +1,36 @@
+<template>
+  <h1>Create Shop</h1>
+  <hr/>
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new Shop</h3>
+        </div>
+        <form method="post"> <!--submit.delegate="submit()" -->
+          <div class="card-body">
+            <div class="form-group">
+              <label class="control-label" for="Shop_ShopName">Shop name</label>
+              <input class="form-control" type="text" id="Shop_ShopName" value.bind="shop.shopName" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Shop_ShopAddress">Shop address</label>
+              <input class="form-control" type="text" id="Shop_ShopAddress" value.bind="shop.shopAddress" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Shop_ShopContact">Shop contact</label>
+              <input class="form-control" type="text" id="Shop_ShopContact" value.bind="shop.shopContact" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Shop_ShopContact2">Shop contact2</label>
+              <input class="form-control" type="text" id="Shop_ShopContact2" value.bind="shop.shopContact2" />
+            </div>
+            <!--<button type="submit" class="btn bg-warning float-right disabled">Create</button>-->
+            <a class="btn bg-warning float-right disabled">Create</a>
+            <a class="btn btn-default" route-href="route: shopsIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

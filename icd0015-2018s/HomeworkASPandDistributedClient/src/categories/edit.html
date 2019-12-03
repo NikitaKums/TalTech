@@ -1,0 +1,24 @@
+<template>
+
+  <h1>Edit Category</h1>
+  <hr />
+  <div>
+    <div class="col-md-6">
+      <div class="card card-success">
+        <div class="card-header">
+          <h3 class="card-title">Edit Category</h3>
+        </div>
+        <form submit.delegate="submit()" method="post">
+          <div class="card-body">
+            <div class="form-group">
+              <label class="control-label" for="Category_CategoryName">Category name</label>
+              <input class="form-control" type="text" id="Category_CategoryName" value.bind="category.categoryName" />
+            </div>
+            <button type="submit" class="btn bg-success float-right">Edit Category <i class="fa fa-pencil"></i></button>
+            <a class="btn btn-default" route-href="categoriesIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

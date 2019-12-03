@@ -1,0 +1,43 @@
+<template>
+  <h1>Delete Order</h1>
+  <hr />
+  <div class="col-md-6">
+    <div class="card card-warning">
+      <div class="card-header">
+        <h3 class="card-title">Are you sure you want to delete this?</h3>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" value="${order.description}" disabled>
+        </div>
+        <div class="form-group">
+          <label>Order creation time</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+            </div>
+            <input type="text" class="form-control" value="${order.dateString}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Shipper</label>
+          <input type="text" class="form-control" value="${order.shipperName}" disabled>
+        </div>
+        <div class="form-group">
+          <span>Your Shop: <strong>${order.shopName}</strong></span>
+        </div>
+        <form submit.delegate="submit()">
+          <button type="submit" class="btn bg-danger float-right" if.bind="order != null && order.productsInOrderCount == 0 ">
+            Delete <i class="fa fa-trash"></i>
+          </button>
+          <button type="button" value="Delete" class="btn bg-danger float-right disabled" if.bind="order != null && order.productsInOrderCount > 0">
+            Delete <i class="fa fa-trash"></i>
+          </button>
+          <a class="btn btn-default" route-href="route: ordersIndex">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

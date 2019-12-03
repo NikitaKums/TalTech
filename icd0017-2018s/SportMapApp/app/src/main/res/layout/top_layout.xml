@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonCentered"
+        style="@style/LayoutControlButtons"
+        android:layout_height="match_parent"
+        android:onClick="buttonCenteredOnClick"
+        android:text="@string/centered" />
+
+    <Button
+        android:id="@+id/buttonDirection"
+        style="@style/LayoutControlButtons"
+        android:layout_height="match_parent"
+        android:onClick="buttonDirectionOnClick"
+        android:text="@string/north_up" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        style="@style/LayoutControlButtons"
+        android:layout_height="match_parent"
+        android:onClick="buttonResetOnClick"
+        android:text="@string/reset" />
+
+    <Button
+        android:id="@+id/buttonCompass"
+        style="@style/LayoutControlButtons"
+        android:layout_height="match_parent"
+
+        android:onClick="buttonCompassOnClick"
+        android:text="@string/compass" />
+
+    <Button
+        android:id="@+id/buttonSessions"
+        style="@style/LayoutControlButtons"
+        android:layout_height="match_parent"
+        android:onClick="buttonSessionsOnClick"
+        android:text="@string/sessions"/>
+</LinearLayout>

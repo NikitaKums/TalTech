@@ -1,0 +1,37 @@
+<template>
+  <h1>Edit</h1>
+
+
+  <h4>Order</h4>
+  <hr />
+  <div class="row">
+    <div class="col-md-4">
+      <form method="post" submit.delegate="submit()">
+
+        <div class="form-group">
+          <label class="control-label" for="Order_Description">Description</label>
+          <input class="form-control" type="text" id="Order_Description" name="Order.Description" value.bind="order.description" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">OrderState</label>
+          <input class="form-control" value="Waiting" disabled/>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Order_DeliveryId">DeliveryId</label>
+          <select class="form-control" id="Order_DeliveryId" name="Order.DeliveryId" value.bind="order.deliveryId">
+            <option repeat.for="delivery of deliverys" value.bind="delivery.id">
+              ${delivery.deliveryService}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    <a route-href="route: ordersIndex">Back to List</a>
+  </div>
+</template>

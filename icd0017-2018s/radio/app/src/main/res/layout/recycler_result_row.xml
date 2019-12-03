@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/appWhite">
+
+
+    <TextView
+        android:id="@+id/textViewArtistName"
+        style="@style/StatisticsResultTextView"
+        android:textSize="@dimen/_18sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSongsAmount"
+        style="@style/StatisticsResultTextView"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewArtistName" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSongsAmount">
+
+        <TextView
+            android:id="@+id/textViewSongName"
+            style="@style/StatisticsResultTextView"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/textViewSongTimesPlayed"
+            style="@style/StatisticsResultTextView"
+            android:layout_weight="2"
+            android:textSize="@dimen/_12sdp" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

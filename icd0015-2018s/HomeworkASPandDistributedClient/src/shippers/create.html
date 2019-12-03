@@ -1,0 +1,39 @@
+<template>
+  <h1>Create Shipper</h1>
+  <hr />
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create Shipper</h3>
+        </div>
+        <form submit.delegate="submit()" method="post">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="ShipperName">Shipper name</label>
+              <input class="form-control" type="text" id="ShipperName" value.bind="shipper.shipperName" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="ShipperAddress">Shipper address</label>
+              <input class="form-control" type="text" id="ShipperAddress" value.bind="shipper.shipperAddress" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="PhoneNumber">PhoneNumber</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                </div>
+                <input class="form-control" type="text" id="PhoneNumber" value.bind="shipper.phoneNumber" />
+              </div>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create Shipper</button>
+            <a class="btn btn-default" route-href="shippersIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

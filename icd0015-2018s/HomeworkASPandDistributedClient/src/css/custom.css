@@ -1,0 +1,93 @@
+html, body, .container-fluid, .wrapper, .content-wrapper{
+    background: #F5EDBC;
+}
+
+.div-with-date {
+  min-height: 600px;
+}
+
+p, .table{
+    margin: 0;
+}
+
+#register-login-button-margin {
+    margin-right: 1vh;
+}
+
+.login-card-body, .register-card-body {
+    background-color: #343A40;
+    color: #C0C9D2;
+}
+
+.create-button-div {
+    max-width: 20vh;
+    min-width: 20vh;
+}
+
+.alert {
+    margin-top: 5px;
+}
+
+.select2-selection__rendered {
+  line-height: 35px !important;
+}
+.select2-container .select2-selection--single {
+  height: 40px !important;
+  width: 100%;
+}
+.select2-selection__arrow {
+  height: 40px !important;
+  width: 100%;
+}
+.select2 {
+  width:100%!important;
+}
+
+.hr-hidden {
+    visibility: hidden;
+}
+
+.bg-black{
+  background-color: #000000;
+}
+
+.sidebar-dark {
+  background-color: #000000;
+  color: #74797D;
+}
+
+.btn-extra{
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  width: 45px;
+  margin: 2px;
+}
+/*color: #F5EDBC;*/
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FDC204;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FDC204;
+}
+
+.pagination-button-margin {
+  color: #ffffff !important;
+}

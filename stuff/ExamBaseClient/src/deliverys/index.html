@@ -1,0 +1,52 @@
+<template>
+  <h1>Index</h1>
+  <p>
+    <a class="btn btn-success"  route-href="route: deliverysCreate">Create New</a>
+  </p>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        DeliveryService
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        DeliveryPrice
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="delivery of deliverys">
+      <td>
+        ${delivery.deliveryService}
+      </td>
+      <td>
+        ${delivery.description}
+      </td>
+      <td>
+        ${delivery.deliveryPrice}
+      </td>
+      <td>
+        <a route-href="route: deliverysEdit; params.bind: {id: delivery.id}">Edit</a> |
+        <a route-href="route: deliverysDetails; params.bind: {id: delivery.id}">Details</a> |
+        <a route-href="route: deliverysDelete; params.bind: {id: delivery.id}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</template>

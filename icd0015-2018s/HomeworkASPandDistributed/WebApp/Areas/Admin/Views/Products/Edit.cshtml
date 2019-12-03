@@ -1,0 +1,128 @@
+@using System.Globalization
+@model WebApp.Models.ProductCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Edit;
+}
+
+<h1>@Resources.Views.Common.Edit @Resources.Domain.Product.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.Edit @Resources.Domain.Product.Header</h3>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label asp-for="Product.ManuFacturerItemCode" class="control-label"></label>
+                        <input asp-for="Product.ManuFacturerItemCode" class="form-control"/>
+                        <span asp-validation-for="Product.ManuFacturerItemCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.ShopCode" class="control-label"></label>
+                        <input asp-for="Product.ShopCode" class="form-control"/>
+                        <span asp-validation-for="Product.ShopCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.ProductName" class="control-label"></label>
+                        <input asp-for="Product.ProductName" class="form-control"/>
+                        <span asp-validation-for="Product.ProductName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.BuyPrice" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-euro"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Product.BuyPrice" class="form-control" id="buyPrice"/>
+                        </div>
+                        <span asp-validation-for="Product.BuyPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.PercentageAddedToBuyPrice" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-percent"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Product.PercentageAddedToBuyPrice" class="form-control" id="percentage"/>
+                        </div>
+                        <span asp-validation-for="Product.PercentageAddedToBuyPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.SellPrice" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-euro"></i>
+                                </span>
+                            </div>
+                            <input asp-for="Product.SellPrice" class="form-control" id="sellPrice"/>
+                        </div>
+                        <span asp-validation-for="Product.SellPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Quantity" class="control-label"></label>
+                        <input asp-for="Product.Quantity" class="form-control"/>
+                        <span asp-validation-for="Product.Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Weight" class="control-label"></label>
+                        <input asp-for="Product.Weight" class="form-control"/>
+                        <span asp-validation-for="Product.Weight" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Length" class="control-label"></label>
+                        <input asp-for="Product.Length" class="form-control"/>
+                        <span asp-validation-for="Product.Length" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Manufacturer" class="control-label"></label>
+                        <select asp-for="Product.ManuFacturerId" class="form-control select-auto-complete" asp-items="Model.ManuFacturerSelectList"></select>
+                        <span asp-validation-for="Product.ManuFacturerId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Inventory" class="control-label"></label>
+                        <select asp-for="Product.InventoryId" class="form-control select-auto-complete" asp-items="Model.InventorySelectList">
+                            <option value="">None</option>
+                        </select>
+                        <span asp-validation-for="Product.InventoryId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Product.Shop" class="control-label"></label>
+                        <select asp-for="Product.ShopId" class="form-control select-auto-complete" asp-items="Model.ShopSelectList"></select>
+                        <span asp-validation-for="Product.ShopId" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="Product.Id"/>
+                    <button type="submit" class="btn bg-success float-right">
+                        @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+                    </button>
+                    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+    $(document).ready(function(){
+        let buyPriceField = document.getElementById("buyPrice");
+        let percentageField = document.getElementById("percentage");
+        let sellPriceField = document.getElementById("sellPrice");
+        buyPriceField.oninput = function() {CalcSellPrice()};
+        percentageField.oninput = function() {CalcSellPrice()};
+               
+        function CalcSellPrice(){
+            let buyPrice = parseFloat(buyPriceField.value.replace(",","."));
+             sellPriceField.value = (buyPrice + (buyPrice * percentageField.value / 100)).toLocaleString('@CultureInfo.CurrentCulture.Name', {minimumFractionDigits: 2});
+         }
+     });
+    </script>
+}

@@ -1,0 +1,64 @@
+<template>
+  <h1>Category Details</h1>
+  <hr />
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Category name
+            </th>
+            <th>
+              Products in category
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${category.categoryName}
+            </td>
+            <td>
+              ${category.categoryProductCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: categoriesIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="category != null" route-href="route: categoriesEdit; params.bind: {id: category.id}">Edit Category <i class="fa fa-pencil"></i></a>
+    </div>
+  <hr/>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Product name
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="products.length > 0">
+        <tr repeat.for="product of products">
+          <td>
+            <a route-href="route: productsDetails; params.bind: {id: product.id}">
+              ${product.productName}
+            </a>
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productsincategoryEdit; params.bind: {id: product.productInCategoryId}"><i class="nav-icon fa fa-pencil"></i></a>
+            <a class="btn bg-danger btn-extra" route-href="route: productsincategoryDelete; params.bind: {id: product.productInCategoryId}"><i class="nav-icon fa fa-trash"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</template>

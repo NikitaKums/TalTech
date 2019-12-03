@@ -1,0 +1,37 @@
+<template>
+  <h1>Product In Category Details</h1>
+  <hr/>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Product
+            </th>
+            <th>
+              Category
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <a if.bind="productInCategory != undefined" route-href="route: productsDetails; params.bind: {id: productInCategory.productId}">${productInCategory.productName}</a>
+            </td>
+            <td>
+              <a if.bind="productInCategory != undefined" route-href="route: categoriesDetails; params.bind: {id: productInCategory.categoryId}">${productInCategory.categoryName}</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: productsincategoryIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="productInCategory != null" route-href="route: productsincategoryEdit; params.bind: {id: productInCategory.id}">Edit Product in Category<i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+
+</template>

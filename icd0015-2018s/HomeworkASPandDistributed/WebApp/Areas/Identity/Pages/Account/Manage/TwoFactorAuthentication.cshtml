@@ -1,0 +1,57 @@
+﻿@page
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = @Resources.Identity.AccountManage.TwoFactorAuthentication;
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+@if (Model.Is2faEnabled)
+{
+    if (Model.RecoveryCodesLeft == 0)
+    {
+        <div class="alert alert-danger">
+            <strong>@Resources.Identity.AccountManage.NoRecoveryCode</strong>
+            <p>@Resources.Identity.AccountManage.MustGenerateRecoveryCode<a asp-page="./GenerateRecoveryCodes">@Resources.Identity.AccountManage.Here</a>.</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft == 1)
+    {
+        <div class="alert alert-danger">
+            <strong>@Resources.Identity.AccountManage.OneRecoveryCodeLeft</strong>
+            <p>@Resources.Identity.AccountManage.ShouldGenerateRecoveryCode <a asp-page="./GenerateRecoveryCodes">@Resources.Identity.AccountManage.Here</a>.</p>
+        </div>
+    }
+    else if (Model.RecoveryCodesLeft <= 3)
+    {
+        <div class="alert alert-warning">
+            <strong>@Resources.Identity.AccountManage.LessThanThreeRecoveryCodesLeft</strong>
+            <p>@Resources.Identity.AccountManage.ShouldGenerateRecoveryCode <a asp-page="./GenerateRecoveryCodes">@Resources.Identity.AccountManage.Here</a>.</p>
+        </div>
+    }
+
+    if (Model.IsMachineRemembered)
+    {
+        <form method="post" style="display: inline-block">
+            <button type="submit" class="btn btn-primary">@Resources.Identity.AccountManage.ForgetThisBrowser</button>
+        </form>
+    }
+    <a asp-page="./Disable2fa" class="btn btn-primary">@Resources.Identity.AccountManage.Disable2FA</a>
+    <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">@Resources.Identity.AccountManage.ResetRecoveryCodes</a>
+}
+
+<h5>@Resources.Identity.AccountManage.AuthApp</h5>
+@if (!Model.HasAuthenticator)
+{
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@Resources.Views.Common.Add @Resources.Identity.AccountManage.AuthApp</a>
+}
+else
+{
+    <a id="enable-authenticator" asp-page="./EnableAuthenticator" class="btn btn-primary">@Resources.Views.Common.SetUp @Resources.Identity.AccountManage.AuthApp</a>
+    <a id="reset-authenticator" asp-page="./ResetAuthenticator" class="btn btn-primary">@Resources.Views.Common.Reset @Resources.Identity.AccountManage.AuthApp</a>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

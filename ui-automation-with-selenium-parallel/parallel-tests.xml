@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="All tests in selenium package" parallel="classes">
+    <test name="TheInternetAppTests/Two/Three" parallel="methods" thread-count="5">
+        <classes>
+            <class name="gm.taltech.ee.selenium.TheInternetAppTests" />
+            <class name="gm.taltech.ee.selenium.TheInternetAppTestsTwo" />
+            <class name="gm.taltech.ee.selenium.TheInternetAppTestsThree" />
+        </classes>
+    </test>
+</suite>

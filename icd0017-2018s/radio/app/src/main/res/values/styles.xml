@@ -1,0 +1,114 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@color/appBlue</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/appWhite</item>
+        <item name="titleTextStyle">@style/MyActionBarTitle</item>
+    </style>
+
+    <style name="MyActionBarTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/appBlue</item>
+    </style>
+
+    <style name="Spinners">
+        <item name="android:layout_width">@dimen/_200sdp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_16sdp</item>
+    </style>
+
+    <style name="SpinnerItem">
+        <item name="android:textColor">@color/appBlue</item>
+        <item name="android:background">@color/appWhite</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+    </style>
+
+
+    <style name="StatisticsTextView">
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/_1sdp</item>
+        <item name="android:layout_margin">@dimen/_3sdp</item>
+        <item name="android:textColor">@color/appBlue</item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/radio_button</item>
+        <item name="android:textSize">@dimen/_20sdp</item>
+        <item name="android:textColor">@color/appBlue</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_8sdp</item>
+        <item name="android:padding">@dimen/_25sdp</item>
+    </style>
+
+    <style name="RadioButtonVolume">
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/radio_button_volume</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:textColor">@color/appBlue</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_3sdp</item>
+    </style>
+
+    <style name="RadioSeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_8sdp</item>
+        <item name="android:maxHeight">@dimen/_2sdp</item>
+        <item name="android:minHeight">@dimen/_2sdp</item>
+        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+    </style>
+
+    <style name="RadioPlayingSongTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_8sdp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/appBlue</item>
+    </style>
+
+
+    <style name="StatisticsResultTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/appBlue</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <style name="RecyclerViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/appWhite</item>
+    </style>
+
+    <style name="RecyclerRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_6sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/_10sdp</item>
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:textColor">@color/appBlue</item>
+        <item name="android:background">@drawable/textview_color_change</item>
+    </style>
+</resources>

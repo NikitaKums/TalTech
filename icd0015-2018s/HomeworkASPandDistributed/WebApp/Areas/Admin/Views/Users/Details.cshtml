@@ -1,0 +1,31 @@
+@model BLL.App.DTO.DomainLikeDTO.Identity.AppUser
+
+@{
+    ViewBag.Title = "Users Details";
+}
+
+<h1>Category Details</h1>
+<hr />
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstLastName)
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.FirstLastName)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

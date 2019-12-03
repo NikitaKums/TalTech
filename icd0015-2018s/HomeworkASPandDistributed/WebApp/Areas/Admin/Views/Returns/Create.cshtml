@@ -1,0 +1,37 @@
+@model ReturnCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Create;
+}
+
+<h1>@Resources.Views.Common.Create @Resources.Domain.Return.Header</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Views.Common.CreateNew @Resources.Domain.Return.Header</h3>
+            </div>
+            <form asp-action="Create">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Return.Description" class="control-label"></label>
+                        <input asp-for="Return.Description" class="form-control"/>
+                        <span asp-validation-for="Return.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Return.Shop" class="control-label"></label>
+                        <select asp-for="Return.ShopId" class="form-control select-auto-complete" asp-items="Model.ShopSelectList"></select>
+                    </div>
+                    <button type="submit" class="btn bg-warning float-right">@Resources.Views.Common.Submit</button>
+                    <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

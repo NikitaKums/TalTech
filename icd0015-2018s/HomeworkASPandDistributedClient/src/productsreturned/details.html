@@ -1,0 +1,50 @@
+<template>
+  <h1>Product In Return Details</h1>
+  <hr/>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Quantity
+            </th>
+            <th>
+              Product Returned Time
+            </th>
+            <th>
+              Product
+            </th>
+            <th>
+              Return
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${productReturned.quantity}
+            </td>
+            <td>
+              ${productReturned.dateString}
+            </td>
+            <td>
+              <a if.bind="productReturned != undefined" route-href="route: productsDetails; params.bind: {id: productReturned.productId}">${productReturned.productName}</a>
+            </td>
+            <td>
+              <a if.bind="productReturned != undefined" route-href="route: returnsDetails; params.bind: {id: productReturned.returnId}">${productReturned.returnDescription}</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: productsreturnedIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="productReturned != null" route-href="route: productsreturnedEdit; params.bind: {id: productReturned.id}">Edit Product in Return <i class="fa fa-pencil"></i></a>
+
+    </div>
+  </div>
+
+</template>

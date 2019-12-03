@@ -1,0 +1,28 @@
+<template>
+  <h1>Details</h1>
+
+  <div>
+    <h4>ToppingOnPizza</h4>
+    <hr/>
+    <dl class="row">
+      <dt class="col-sm-2">
+        Pizza
+      </dt>
+      <dd class="col-sm-10">
+        ${toppingOnPizza.pizzaDescription}
+      </dd>
+      <dt class="col-sm-2">
+        Topping
+      </dt>
+      <dd class="col-sm-10">
+        ${toppingOnPizza.toppingDescription}
+      </dd>
+    </dl>
+  </div>
+  <div>
+    <a if.bind="toppingOnPizza.id != undefined" route-href="route: toppingsonpizzaEdit; params.bind: {id: toppingOnPizza.id}">Edit</a> |
+    <a if.bind="toppingOnPizza.id != undefined" route-href="route: toppingsonpizzaDelete; params.bind: {id: toppingOnPizza.id}">Delete</a> |
+    <a route-href="route: toppingsonpizzaIndex">Back to List</a>
+  </div>
+
+</template>

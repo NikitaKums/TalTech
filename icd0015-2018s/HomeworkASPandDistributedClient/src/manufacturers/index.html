@@ -1,0 +1,75 @@
+<template>
+  <div>
+    <h1>ManuFacturer Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: manufacturersCreate" if.bind="manuFacturers[0].id != undefined">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: manufacturersCreate" if.bind="manuFacturers[0].id == undefined">Create New</a>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Manufacturer name
+            </th>
+            <th>
+              Address
+            </th>
+            <th>
+              PhoneNumber
+            </th>
+            <th>
+              Products with this Manufacturer
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="manuFacturers[0].id != undefined">
+          <tr repeat.for="manuFacturer of manuFacturers">
+            <td>
+              ${manuFacturer.manuFacturerName}
+            </td>
+            <td>
+              ${manuFacturer.aadress}
+            </td>
+            <td>
+              ${manuFacturer.phoneNumber}
+            </td>
+            <td>
+              ${manuFacturer.productCount}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: manufacturersEdit; params.bind: {id: manuFacturer.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: manufacturersDetails; params.bind: {id: manuFacturer.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: defectsDelete; params.bind: {id: manuFacturer.id}" if.bind="manuFacturer != null && manuFacturer.productCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: manufacturersDelete; params.bind: {id: manuFacturer.id}" if.bind="manuFacturer != null && manuFacturer.productCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+</template>

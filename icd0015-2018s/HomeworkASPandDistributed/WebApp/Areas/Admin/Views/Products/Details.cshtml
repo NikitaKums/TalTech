@@ -1,0 +1,114 @@
+@model BLL.App.DTO.DomainLikeDTO.Product
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Details;
+}
+
+<h1>@Resources.Domain.Product.Header @Resources.Views.Common.Details</h1>
+<hr/>
+<div>
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ManuFacturerItemCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ShopCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuyPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PercentageAddedToBuyPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SellPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Length)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Manufacturer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inventory)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shop)
+                    </th>
+                    <th>
+                        @Resources.Domain.Product.Comments
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.ManuFacturerItemCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ShopCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.BuyPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.PercentageAddedToBuyPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.SellPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Manufacturer.ManuFacturerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Inventory.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Shop.ShopName)
+                    </td>
+                    <td>
+                        @foreach (var item in Model.Comments)
+                        {
+                            <a asp-action="Details" asp-controller="Comments" asp-route-id="@item.Id">
+                                <strong>@item.CommentTitle</strong>
+                            </a>
+                            <br/>
+                        }
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn bg-success">
+            @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+        </a>
+    </div>
+</div>

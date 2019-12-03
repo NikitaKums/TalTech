@@ -1,0 +1,68 @@
+@model PaginatedList<BLL.App.DTO.DomainLikeDTO.Inventory>
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Index;
+}
+<a asp-action="Index">
+    <h1>@Resources.Domain.Inventory.Header @Resources.Views.Common.Index</h1>
+</a>
+<hr/>
+<div class="create-button-div">
+    <a asp-action="Create" class="btn btn-block btn-warning">@Resources.Views.Common.CreateNew</a>
+</div>
+<form asp-action="Index" method="get">
+    <partial name="_SearchPartial"/>
+</form>
+<div class="card">
+    <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["DescriptionSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Inventory.Description
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["CreatedAtSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                        @Resources.Domain.Inventory.InventoryCreationTime
+                    </a>
+
+                </th>
+                <th>
+                    @Resources.Domain.Inventory.Shop
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InventoryCreationTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Shop.ShopName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-success btn-extra">
+                            <i class="nav-icon fa fa-pencil"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-info btn-extra">
+                            <i class="nav-icon fa fa-info"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-danger btn-extra">
+                            <i class="nav-icon fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<partial name="_PaginationPartial"/>

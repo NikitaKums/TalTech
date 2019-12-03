@@ -1,0 +1,48 @@
+@model BLL.App.DTO.DomainLikeDTO.Inventory
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Details;
+}
+
+<h1>@Resources.Domain.Inventory.Header @Resources.Views.Common.Details</h1>
+<hr/>
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InventoryCreationTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shop)
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.InventoryCreationTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Shop.ShopName)
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn bg-success">
+            @Resources.Views.Common.Edit <i class="nav-icon fa fa-pencil"></i>
+        </a>
+    </div>
+</div>

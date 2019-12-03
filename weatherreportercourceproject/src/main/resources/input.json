@@ -1,0 +1,11 @@
+{
+  "cities" : [ {
+    "name" : "Moscow"
+  }, {
+    "name" : "Tallinn"
+  }, {
+    "name" : "New York"
+  }, {
+    "name" : "Austin"
+  }  ]
+}

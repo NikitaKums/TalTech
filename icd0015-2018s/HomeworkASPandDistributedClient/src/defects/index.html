@@ -1,0 +1,72 @@
+<template>
+  <div>
+    <h1>Defect Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: defectsCreate" if.bind="defects != null && defects.length > 0">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: defectsCreate" if.bind="defects.length < 1 || defects == null || defects[0].id == undefined">Create New</a>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Shop
+            </th>
+            <th>
+              Products with this defect type
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="defects.length > 0">
+          <tr repeat.for="defect of defects">
+            <td>
+              ${defect.description}
+            </td>
+            <td>
+              ${defect.shopName}
+            </td>
+            <td>
+              <a route-href="route: defectsDetails; params.bind: {id: defect.id}">${defect.productsWithDefectCount}</a>
+            </td>
+            <td>
+              <a route-href="route: productswithdefectCreate; params.bind: {id: defect.id}" class="btn bg-warning btn-extra">
+                <i class="nav-icon fa fa-plus"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: defectsDetails; params.bind: {id: defect.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-success btn-extra" route-href="route: defectsEdit; params.bind: {id: defect.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-danger btn-extra disabled" route-href="route: defectsDelete; params.bind: {id: defect.id}" if.bind="defect != null && defect.productsWithDefectCount > 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: defectsDelete; params.bind: {id: defect.id}" if.bind="defect != null && defect.productsWithDefectCount == 0">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+</template>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#656565">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG11"
+            style="@style/gameButton" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG12"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG13"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG14"
+            style="@style/gameButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG21"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG22"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG23"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG24"
+            style="@style/gameButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG31"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG32"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG33"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG34"
+            style="@style/gameButton"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG41"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG42"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG43"
+            style="@style/gameButton"/>
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="tableButtonOnClick"
+            android:layout_weight="1"
+            android:tag="@string/TAG44"
+            style="@style/gameButton"/>
+    </LinearLayout>
+
+</LinearLayout>

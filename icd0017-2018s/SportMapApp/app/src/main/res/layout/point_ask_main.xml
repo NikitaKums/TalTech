@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBlack">
+
+    <Button
+        android:id="@+id/buttonSave"
+        style="@style/LayoutControlButtons"
+        android:layout_width="wrap_content"
+        android:onClick="saveButtonOnClick"
+        android:text="@string/save"
+        android:layout_margin="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDistance" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        style="@style/LayoutControlButtons"
+        android:layout_width="wrap_content"
+        android:onClick="cancelButtonOnClick"
+        android:text="@string/cancel"
+        android:layout_margin="@dimen/_5sdp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDistance" />
+
+    <EditText
+        android:id="@+id/editTextDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:textColor="@color/appOrange"
+        android:textColorHint="@color/appOrange"
+        android:inputType="number"
+        android:background="@drawable/edit_text_line"
+        android:hint="@string/enter_distance_here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

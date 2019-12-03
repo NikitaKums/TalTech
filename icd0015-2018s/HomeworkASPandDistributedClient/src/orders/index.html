@@ -1,0 +1,82 @@
+<template>
+  <h1>Order Index</h1>
+  <hr />
+  <div class="create-button-div">
+    <a class="btn btn-block btn-warning" route-href="route: ordersCreate" if.bind="orders[0].id != undefined">Create New</a>
+    <a class="btn btn-block btn-warning disabled" route-href="route: ordersCreate" if.bind="orders[0].id == undefined">Create New</a>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Description
+          </th>
+          <th>
+            Order creation time
+          </th>
+          <th>
+            Shipper
+          </th>
+          <th>
+            Products in order
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="orders[0].id != undefined">
+        <tr repeat.for="order of orders">
+          <td>
+            ${order.description}
+          </td>
+          <td>
+            ${order.dateString}
+          </td>
+          <td>
+            ${order.shipperName}
+          </td>
+          <td>
+            <a route-href="route: ordersDetails; params.bind: {id: order.id}">${order.productsInOrderCount}</a>
+          </td>
+          <td>
+            <a route-href="route: productsinorderCreate; params.bind: {id: order.id}" class="btn bg-warning btn-extra">
+              <i class="nav-icon fa fa-plus"></i>
+            </a>
+            <a if.bind="order.productsInOrderCount == 0" route-href="route: ordersReceived; params.bind: {id: order.id}" class="btn bg-primary btn-extra disabled">
+              <i class="nav-icon fa fa-check"></i>
+            </a>
+            <a if.bind="order.productsInOrderCount > 0" route-href="route: ordersReceived; params.bind: {id: order.id}" class="btn bg-primary btn-extra">
+              <i class="nav-icon fa fa-check"></i>
+            </a>
+            <a class="btn bg-info btn-extra" route-href="route: ordersDetails; params.bind: {id: order.id}">
+              <i class="nav-icon fa fa-info"></i>
+            </a>
+            <a class="btn bg-success btn-extra" route-href="route: ordersEdit; params.bind: {id: order.id}">
+              <i class="nav-icon fa fa-pencil"></i>
+            </a>
+            <a class="btn bg-danger btn-extra disabled" route-href="route: ordersDelete; params.bind: {id: order.id}" if.bind="order != null && order.productsInOrderCount > 0">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+            <a class="btn bg-danger btn-extra" route-href="route: ordersDelete; params.bind: {id: order.id}" if.bind="order != null && order.productsInOrderCount == 0">
+              <i class="nav-icon fa fa-trash"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <compose view="../pagination_partial.html"></compose>
+</template>

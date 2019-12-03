@@ -1,0 +1,53 @@
+@model ProductInOrderCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Create;
+}
+
+<h1>@Resources.Domain.ProductInOrder.AddProductToOrder</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Domain.ProductInOrder.AddProductToOrder</h3>
+            </div>
+            <form asp-action="Create">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ProductInOrder.Quantity" class="control-label"></label>
+                        <input asp-for="ProductInOrder.Quantity" class="form-control"/>
+                        <span asp-validation-for="ProductInOrder.Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductInOrder.ProductInOrderPlacingTime" class="control-label"></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                            </div>
+                            <input asp-for="ProductInOrder.ProductInOrderPlacingTime" class="form-control"/>
+                        </div>
+                        <span asp-validation-for="ProductInOrder.ProductInOrderPlacingTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductInOrder.Product" class="control-label"></label>
+                        <select asp-for="ProductInOrder.ProductId" class="form-control select-auto-complete" asp-items="Model.ProductSelectList"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductInOrder.Order" class="control-label"></label>
+                        <select asp-for="ProductInOrder.OrderId" class="form-control select-auto-complete" asp-items="Model.OrderSelectList"></select>
+                    </div>
+                    <button type="submit" class="btn bg-warning float-right">@Resources.Views.Common.Submit</button>
+                    <a asp-action="Index" asp-controller="Orders" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

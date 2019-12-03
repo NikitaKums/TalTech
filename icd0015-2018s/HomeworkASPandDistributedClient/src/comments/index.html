@@ -1,0 +1,66 @@
+<template>
+  <div>
+    <h1>Comments Index</h1>
+    <hr />
+    <div class="create-button-div">
+      <a class="btn btn-block btn-warning" route-href="route: commentsCreate" if.bind="comments != null && comments.length > 0">Create New</a>
+      <a class="btn btn-block btn-warning disabled" route-href="route: commentsCreate" if.bind="comments.length < 1 || comments == null || comments[0].id == undefined">Create New</a>
+    </div>
+    <form>
+      <div class="row">
+        <div class="col-md-3">
+          <input value.bind="search" class="form-control" />
+        </div>
+        <div class="col-md-4">
+          <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+          <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Comment title
+            </th>
+            <th>
+              Comment body
+            </th>
+            <th>
+              Product with comment
+            </th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody if.bind="comments.length > 0">
+          <tr repeat.for="comment of comments">
+            <td>
+              ${comment.commentTitle}
+            </td>
+            <td>
+              ${comment.commentBody}
+            </td>
+            <td>
+              ${comment.productName}
+            </td>
+            <td>
+              <a class="btn bg-success btn-extra" route-href="route: commentsEdit; params.bind: {id: comment.id}">
+                <i class="nav-icon fa fa-pencil"></i>
+              </a>
+              <a class="btn bg-info btn-extra" route-href="route: commentsDetails; params.bind: {id: comment.id}">
+                <i class="nav-icon fa fa-info"></i>
+              </a>
+              <a class="btn bg-danger btn-extra" route-href="route: commentsDelete; params.bind: {id: comment.id}">
+                <i class="nav-icon fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <compose view="../pagination_partial.html"></compose>
+  </div>
+</template>

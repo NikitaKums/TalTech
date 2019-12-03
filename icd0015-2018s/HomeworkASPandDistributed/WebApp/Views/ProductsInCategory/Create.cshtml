@@ -1,0 +1,37 @@
+@model ProductInCategoryCreateViewModel
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Create;
+}
+
+<h1>@Resources.Domain.ProductInCategory.AddProductToCategory</h1>
+<hr/>
+<div>
+    <div class="col-md-6">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">@Resources.Domain.ProductInCategory.AddProductToCategory</h3>
+            </div>
+            <form asp-action="Create">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ProductInCategory.Product" class="control-label"></label>
+                        <select asp-for="ProductInCategory.ProductId" class="form-control select-auto-complete" asp-items="@Model.ProductSelectList"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductInCategory.Category" class="control-label"></label>
+                        <select asp-for="ProductInCategory.CategoryId" class="form-control select-auto-complete" asp-items="@Model.CategorySelectList"></select>
+                    </div>
+                    <button type="submit" class="btn bg-warning float-right">@Resources.Views.Common.Submit</button>
+                    <a asp-action="Index" asp-controller="Categories" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

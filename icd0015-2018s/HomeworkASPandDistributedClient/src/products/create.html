@@ -1,0 +1,80 @@
+<template>
+  <h1>Create Product</h1>
+  <hr/>
+  <div>
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new Product</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Product_ManuFacturerItemCode">Manufacturer item code</label>
+              <input class="form-control" type="text" id="Product_ManuFacturerItemCode" name="Product.ManuFacturerItemCode" value.bind="product.manuFacturerItemCode" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_ShopCode">Shop code</label>
+              <input class="form-control" type="text" id="Product_ShopCode" name="Product.ShopCode" value.bind="product.shopCode" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_ProductName">Product name</label>
+              <input class="form-control" type="text" id="Product_ProductName" name="Product.ProductName" value.bind="product.productName" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_BuyPrice">Buy price</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-euro"></i></span>
+                </div>
+                <input class="form-control" type="text" id="Product_BuyPrice" name="Product.BuyPrice" value.bind="product.buyPrice" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_PercentageAddedToBuyPrice">Percentage added to buy price</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-percent"></i></span>
+                </div>
+                <input class="form-control" type="number" id="Product_PercentageAddedToBuyPrice" name="Product.PercentageAddedToBuyPrice" value.bind="product.percentageAddedToBuyPrice" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_SellPrice">Sell price</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-euro"></i></span>
+                </div>
+                <input class="form-control" type="text" id="Product_SellPrice" name="Product.SellPrice" value.bind="product.sellPrice" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_Quantity">Quantity</label>
+              <input class="form-control" type="number" id="Product_Quantity" name="Product.Quantity" value.bind="product.quantity" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_Weight">Weight</label>
+              <input class="form-control" type="text" id="Product_Weight" name="Product.Weight" value.bind="product.weight" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_Length">Length</label>
+              <input class="form-control" type="text" id="Product_Length" name="Product.Length" value.bind="product.length" />
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="Product_ManuFacturerId">Manufacturer</label>
+              <select class="form-control" id="Product_ManuFacturerId" value.bind="product.manuFacturerId">
+                <option repeat.for="manufacturer of manuFacturers" model.bind="manufacturer.id">
+                  ${manufacturer.manuFacturerName}
+                </option>
+              </select>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create</button>
+            <a class="btn btn-default" route-href="route: productsIndex">Cancel</a>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

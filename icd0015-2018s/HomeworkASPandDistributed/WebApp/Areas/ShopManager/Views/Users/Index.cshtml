@@ -1,0 +1,109 @@
+@model PaginatedList<UserCreateViewModel>
+@{
+    ViewBag.Title = @Resources.Domain.AppUser.Header;
+}
+
+<div>
+    <a asp-action="Index">
+        <h1>@Resources.Domain.AppUser.Header @Resources.Views.Common.Index</h1>
+    </a>
+        <hr/>
+    <form asp-action="Index" method="get">
+        <partial name="_SearchPartial"/>
+    </form>
+    <div class="card">
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.AppUser.FirstName
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["LastNameSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.AppUser.LastName
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["EmailSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.AppUser.Email
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["AddressSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.AppUser.Aadress
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["ShopSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">
+                            @Resources.Domain.AppUser.Shop
+                        </a>
+                    </th>
+                    <th>
+                        @Resources.Domain.AppUser.Roles
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppUser.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppUser.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AppUser.Email)
+                        </td>
+                        <td>
+                            @if (item.AppUser.Aadress != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.AppUser.Aadress)
+                            }
+                            else
+                            {
+                                <span>-----</span>
+                            }
+                        </td>
+                        <td>
+                            @if (item.AppUser.Shop != null)
+                            {
+                                @Html.DisplayFor(modelItem => item.AppUser.Shop.ShopName)
+                            }
+                            else
+                            {
+                                <span>-----</span>
+                            }
+                        </td>
+                        <td>
+
+                            @if (item.AppUserRoles.Count > 0)
+                            {
+                                foreach (var role in item.AppUserRoles)
+                                {
+                                    <span>@role</span>
+                                    <br/>
+                                }
+                            }
+                            else
+                            {
+                                <span>-----</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.AppUser.Id" class="btn bg-success">
+                                <i class="icon fa fa-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <partial name="_PaginationPartial"/>
+</div>

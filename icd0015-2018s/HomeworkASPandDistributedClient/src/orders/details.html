@@ -1,0 +1,88 @@
+<template>
+  <h1>Order Details</h1>
+  <hr/>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>
+              Description
+            </th>
+            <th>
+              Order Creation Time
+            </th>
+            <th>
+              Shipper
+            </th>
+            <th>
+              Products in order
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              ${order.description}
+            </td>
+            <td>
+              ${order.dateString}
+            </td>
+            <td>
+              ${order.shipperName}
+            </td>
+            <td>
+              ${order.productsInOrderCount}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-default" route-href="route: ordersIndex">Cancel</a>
+      <a class="btn bg-success" if.bind="order != null" route-href="route: ordersEdit; params.bind: {id: order.id}">Edit Order <i class="fa fa-pencil"></i></a>
+    </div>
+  </div>
+  <hr/>
+  <div class="card">
+    <div class="card-body table-responsive p-0">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>
+            Product name
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Product in order placing time
+          </th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody if.bind="productsInOrder[0].id != undefined">
+        <tr repeat.for="productInOrder of productsInOrder">
+          <td>
+            <a route-href="route: productsDetails; params.bind: {id: productInOrder.productId}">
+              ${productInOrder.productName}
+            </a>
+          </td>
+          <td>
+            ${productInOrder.quantity}
+          </td>
+          <td>
+            ${productInOrder.dateString}
+          </td>
+          <td>
+            <a class="btn bg-success btn-extra" route-href="route: productsinorderEdit; params.bind: {id: productInOrder.id}"><i class="nav-icon fa fa-pencil"></i></a>
+            <a class="btn bg-danger btn-extra" route-href="route: productsinorderDelete; params.bind: {id: productInOrder.id}"><i class="nav-icon fa fa-trash"></i></a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

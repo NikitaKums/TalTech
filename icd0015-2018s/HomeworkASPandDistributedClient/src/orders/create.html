@@ -1,0 +1,48 @@
+<template>
+  <require from="select2-custom-attribute"></require>
+  <h1>Create Order</h1>
+  <hr/>
+  <div class="div-with-date">
+    <div class="col-md-6">
+      <div class="card card-warning">
+        <div class="card-header">
+          <h3 class="card-title">Create new Order</h3>
+        </div>
+        <form method="post" submit.delegate="submit()">
+          <div class="card-body">
+
+            <div class="form-group">
+              <label class="control-label" for="Order_Description">Description</label>
+              <input class="form-control" type="text" id="Order_Description" name="Order.Description"
+                     value.bind="order.description"/>
+            </div>
+            <aurelia-flatpickr config.bind="{wrap:true}" value.bind="order.orderCreationTime">
+              <label class="control-label">Order creation time</label>
+              <div class="input-group aurelia-flatpickr">
+                <input type="text" class="form-control" placeholder="Select date" data-input>
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-clear>Clear</button>
+                    <button class="btn btn-default" type="button" data-toggle>Show</button>
+                  </span>
+              </div>
+            </aurelia-flatpickr>
+            <div class="form-group">
+              <label class="control-label" for="Order_ShipperId">Shipper</label>
+              <select select2 class="form-control" id="Order_ShipperId" name="Order.ShipperId" value.bind="order.shipperId">
+                <option repeat.for="shipper of shippers" model.bind="shipper.id">
+                  ${shipper.shipperName}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <span>Your Shop: <strong>${shop.shopName}</strong></span>
+            </div>
+            <button type="submit" class="btn bg-warning float-right">Create</button>
+            <a class="btn btn-default" route-href="route: ordersIndex">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</template>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="utf-8">
+    <title> =) </title>
+    <link  rel="stylesheet" href = "style.css">
+</head>
+<body>
+<div id="menu">
+    <a class="menu" id="list-page-link" href="?cmd=list_page">Kasutajad</a> |
+    <a class="menu" id="add-page-link" href="?cmd=add_page">Lisa</a>
+</div>
+<br>
+<div tpl-if="$message" id="success" class="alert_box">
+    {{ $message }}
+</div>
+<div tpl-if="$errors" id="error-block" class="alert_box">
+        <span tpl-foreach="$errors as $error">
+                {{ $error }} <br>
+        </span>
+</div>
+<div tpl-include="{{ $template }}"></div>
+<div id="footer"><a class="menu">&#9750;</a></div>
+</body>
+</html><!-- need to push -->

@@ -1,0 +1,49 @@
+@model BLL.App.DTO.DomainLikeDTO.Sale
+
+@{
+    ViewData["Title"] = @Resources.Views.Common.Delete;
+}
+
+<h1>@Resources.Views.Common.Delete @Resources.Domain.Sale.Header</h1>
+<hr/>
+<div class="col-md-6">
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">@Resources.Views.Shared._Layout.LayoutAreYouSureYouWantToDeleteThis</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.Description)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.Description)" disabled>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.SaleInitialCreationTime)</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fa fa-calendar"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" value="@Html.DisplayFor(model => model.SaleInitialCreationTime)" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(model => model.AppUser)</label>
+                <input type="text" class="form-control" value="@Html.DisplayFor(model => model.AppUser.FirstLastName)" disabled>
+            </div>
+            <form asp-action="DeleteWithRestore">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" class="btn bg-danger float-right">
+                    @Resources.Views.Common.Delete (@Resources.Domain.Sale.RestoreQuantity) <i class="nav-icon fa fa-trash"></i>
+                </a>
+                <a asp-action="Index" class="btn btn-default">@Resources.Views.Common.Cancel</a>
+            </form>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id"/>
+                <a type="submit" value="Delete" class="btn bg-danger float-right">
+                    @Resources.Views.Common.Delete <i class="nav-icon fa fa-trash"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

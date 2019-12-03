@@ -1,0 +1,83 @@
+<template>
+  <h1>Index</h1>
+
+  <p>
+    <a class="btn btn-success"  route-href="route: ordersCreate">Create New</a>
+  </p>
+  <form>
+    <div class="row">
+      <div class="col-md-3">
+        <input value.bind="search" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Search"  class="btn btn-primary" click.delegate="searchClicked()" />
+        <a class="btn btn-danger" href="#" click.delegate="searchResetClicked()">Reset</a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>
+        Description
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        OrderState
+      </th>
+      <th>
+        Delivery
+      </th>
+      <th>
+        Pizza(s)
+      </th>
+      <th>
+        Drink(s)
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr repeat.for="order of orders">
+      <td>
+        ${order.description}
+      </td>
+      <td>
+        ${order.price}
+      </td>
+      <td>
+        ${order.orderState}
+      </td>
+      <td>
+        ${order.deliveryService}
+      </td>
+      <td if.bind="order.pizzasInOrder.length == 0">
+        ---
+      </td>
+      <td if.bind="order.pizzasInOrder.length > 0">
+        <span repeat.for="pizzasinorder of order.pizzasInOrder">
+          <a route-href="route: pizzasinorderDetails; params.bind: {id: pizzasinorder.id}">${pizzasinorder.pizzaDescription}</a><br>
+        </span>
+      </td>
+      <td if.bind="order.drinksInOrder.length == 0">
+        ---
+      </td>
+      <td if.bind="order.drinksInOrder.length > 0">
+        <span repeat.for="drinksinorder of order.drinksInOrder">
+          <a route-href="route: drinksinorderDetails; params.bind: {id: drinksinorder.id}">${drinksinorder.drinkDescription}</a><br>
+        </span>
+      </td>
+      <td>
+        <a route-href="route: ordersEdit; params.bind: {id: order.id}">Edit</a> |
+        <a route-href="route: ordersDetails; params.bind: {id: order.id}">Details</a> |
+        <a route-href="route: ordersDelete; params.bind: {id: order.id}">Delete</a> | <br>
+        <a route-href="route: drinksinorderCreate; params.bind: {id: order.id}">Add drink to order</a> |
+        <a route-href="route: pizzasinorderCreate; params.bind: {id: order.id}">Add pizza to order</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</template>

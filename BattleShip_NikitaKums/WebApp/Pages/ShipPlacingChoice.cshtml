@@ -1,0 +1,15 @@
+@page
+@model ShipPlacingChoiceModel
+@{
+    ViewData["Title"] = "Ship placement";
+}
+
+<form method="post">
+    <span>Use generated board or place ships yourself?</span>   
+    <br/>
+    <input type="hidden" asp-for="Name" value="@Model.Name"/>
+    <input name="submit" type="submit" class="btn" value="Random" id="Random Board"/>
+    <br/>
+    <br/>
+    <input name="submit" type="submit" class="btn" value="Place" id="Place ships"/>
+</form>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="va8-36-MPg">
+    <device id="ipad12_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="fQK-wD-avx">
+            <objects>
+                <splitViewController id="va8-36-MPg" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Pon-xN-zso" kind="relationship" relationship="masterViewController" id="TI8-8M-oq4"/>
+                        <segue destination="ezd-N2-NNE" kind="relationship" relationship="detailViewController" id="pr3-gf-Tfe"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szR-dm-BDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1071" y="-220"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Xkg-Hp-vaY">
+            <objects>
+                <viewController title="Home" id="x8D-vC-R5u" customClass="MasterViewController" customModule="iOS15Puzzlev2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6aG-DS-Vwv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uVA-PL-aFw">
+                                <rect key="frame" x="120.5" y="658" width="134" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-xx-V8f">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Play game"/>
+                                        <connections>
+                                            <segue destination="ayo-62-uym" kind="showDetail" identifier="ShowGame" id="rgc-3Q-peZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="078-8V-zJz">
+                                        <rect key="frame" x="0.0" y="72" width="134" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="ezd-N2-NNE" kind="showDetail" id="Yvd-TJ-i34"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uVA-PL-aFw" firstAttribute="centerY" secondItem="HM7-fw-rjI" secondAttribute="centerY" id="DUH-lO-VNb"/>
+                            <constraint firstItem="uVA-PL-aFw" firstAttribute="centerX" secondItem="HM7-fw-rjI" secondAttribute="centerX" id="Stx-gc-WtT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HM7-fw-rjI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Fb1-C4-pqN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T80-dD-Tvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="-589"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="zqh-xU-uDO">
+            <objects>
+                <viewController title="Settings" id="ezd-N2-NNE" customClass="SettingsViewController" customModule="iOS15Puzzlev2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1HI-4n-VEa">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OHT-st-iWX">
+                                <rect key="frame" x="20" y="40" width="984" height="1306"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="W5a-58-lTw">
+                                        <rect key="frame" x="0.0" y="0.0" width="984" height="649"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board X axis size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKP-ou-JQw">
+                                                <rect key="frame" x="0.0" y="0.0" width="984" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mDa-qF-JgU">
+                                                <rect key="frame" x="0.0" y="69" width="984" height="54"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="XTextFieldChanged:" destination="ezd-N2-NNE" eventType="editingChanged" id="dhn-y2-vKS"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board Y axis size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8w-te-H4L">
+                                                <rect key="frame" x="0.0" y="144" width="984" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZ5-ML-WSN">
+                                                <rect key="frame" x="0.0" y="213" width="984" height="54"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="YTextFieldChanged:" destination="ezd-N2-NNE" eventType="editingChanged" id="4TN-T4-lmZ"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter board size" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-Cd-EQg">
+                                                <rect key="frame" x="0.0" y="601" width="984" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GZ5-ML-WSN" firstAttribute="top" relation="lessThanOrEqual" secondItem="s8w-te-H4L" secondAttribute="bottom" constant="21" id="062-TZ-7qM"/>
+                                            <constraint firstItem="s8w-te-H4L" firstAttribute="top" relation="lessThanOrEqual" secondItem="mDa-qF-JgU" secondAttribute="bottom" constant="21" id="N7q-zy-f2O"/>
+                                            <constraint firstItem="X9e-Cd-EQg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GZ5-ML-WSN" secondAttribute="bottom" constant="20" id="Rsh-jK-TvM"/>
+                                            <constraint firstItem="mDa-qF-JgU" firstAttribute="top" relation="lessThanOrEqual" secondItem="qKP-ou-JQw" secondAttribute="bottom" constant="21" id="hfp-cG-5hJ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hhw-Le-AAM">
+                                        <rect key="frame" x="0.0" y="657" width="984" height="649"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick color theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX3-1C-NTE">
+                                                <rect key="frame" x="350.5" y="0.0" width="283" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                </variation>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="71a-Kx-RwK">
+                                                <rect key="frame" x="368.5" y="131" width="247.5" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQP-rr-6yb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stP-73-NVE">
+                                                        <rect key="frame" x="198.5" y="9.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="ColorStuff:" destination="ezd-N2-NNE" eventType="valueChanged" id="poa-hZ-ZUL"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WWi-Li-Yte">
+                                                <rect key="frame" x="374" y="191" width="236.5" height="194"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKv-zQ-wBj">
+                                                        <rect key="frame" x="0.0" y="72" width="187.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ezr-v2-Seh">
+                                                        <rect key="frame" x="187.5" y="81.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="ColorStuff:" destination="ezd-N2-NNE" eventType="valueChanged" id="cvO-5c-FnE"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ecc-Xm-cfh">
+                                                <rect key="frame" x="362.5" y="395" width="259.5" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purple Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC0-xz-gqF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pY-tK-e3c">
+                                                        <rect key="frame" x="210.5" y="9.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="ColorStuff:" destination="ezd-N2-NNE" eventType="valueChanged" id="7Bv-oc-BiS"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WmR-9N-2Wp">
+                                                <rect key="frame" x="326" y="455" width="332" height="194"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pink-Blue Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkm-jr-mFA">
+                                                        <rect key="frame" x="0.0" y="72" width="283" height="50"/>
+                                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <variation key="heightClass=regular-widthClass=regular">
+                                                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                                                        </variation>
+                                                    </label>
+                                                    <switch opaque="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QW7-Lt-pHq">
+                                                        <rect key="frame" x="283" y="81.5" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="ColorStuff:" destination="ezd-N2-NNE" eventType="valueChanged" id="2U5-gr-6v7"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WWi-Li-Yte" firstAttribute="top" secondItem="71a-Kx-RwK" secondAttribute="bottom" constant="10" id="3vj-OJ-929"/>
+                                            <constraint firstItem="ecc-Xm-cfh" firstAttribute="top" secondItem="WWi-Li-Yte" secondAttribute="bottom" constant="10" id="GIu-wI-KuH"/>
+                                            <constraint firstItem="WmR-9N-2Wp" firstAttribute="top" secondItem="ecc-Xm-cfh" secondAttribute="bottom" constant="10" id="Wyb-eb-U7I"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8pU-6t-XW1" firstAttribute="bottom" secondItem="OHT-st-iWX" secondAttribute="bottom" constant="20" id="U61-13-Bdo"/>
+                            <constraint firstItem="OHT-st-iWX" firstAttribute="leading" secondItem="8pU-6t-XW1" secondAttribute="leading" constant="20" id="g1u-BX-XfU"/>
+                            <constraint firstItem="8pU-6t-XW1" firstAttribute="trailing" secondItem="OHT-st-iWX" secondAttribute="trailing" constant="20" id="hTE-hE-tqj"/>
+                            <constraint firstItem="OHT-st-iWX" firstAttribute="top" secondItem="8pU-6t-XW1" secondAttribute="top" constant="20" id="wy5-zx-JOI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8pU-6t-XW1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ldL-ob-ljX"/>
+                    <connections>
+                        <outlet property="MessageTextField" destination="X9e-Cd-EQg" id="WUx-x2-xr2"/>
+                        <outlet property="XTextField" destination="mDa-qF-JgU" id="2f9-Uj-Z6r"/>
+                        <outlet property="YTextField" destination="GZ5-ML-WSN" id="acf-zw-gSd"/>
+                        <outletCollection property="Switches" destination="stP-73-NVE" collectionClass="NSMutableArray" id="27r-Ke-OtA"/>
+                        <outletCollection property="Switches" destination="Ezr-v2-Seh" collectionClass="NSMutableArray" id="FuI-iX-3qX"/>
+                        <outletCollection property="Switches" destination="8pY-tK-e3c" collectionClass="NSMutableArray" id="2TG-Zr-4mK"/>
+                        <outletCollection property="Switches" destination="QW7-Lt-pHq" collectionClass="NSMutableArray" id="Fyb-hl-TXK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktu-0s-78F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965.625" y="206.25"/>
+        </scene>
+        <!--Game-->
+        <scene sceneID="WjM-TC-FcK">
+            <objects>
+                <viewController title="Game" id="ayo-62-uym" customClass="GameViewController" customModule="iOS15Puzzlev2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MT0-0x-uRl">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hib-93-0K6">
+                                <rect key="frame" x="20" y="40" width="984" height="1306"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uDv-eu-vwe">
+                                        <rect key="frame" x="0.0" y="0.0" width="984" height="649"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v8-lE-Kda">
+                                                <rect key="frame" x="0.0" y="0.0" width="984" height="87"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <state key="normal" title="Start">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="startButtonTouchUpInside:" destination="ayo-62-uym" eventType="touchUpInside" id="scx-JY-yhd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VW-RZ-BwH">
+                                                <rect key="frame" x="0.0" y="117" width="984" height="87"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                                <state key="normal" title="Reset">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="ResetButtonTouchUpInside:" destination="ayo-62-uym" eventType="touchUpInside" id="Eb9-2B-Rxa"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcX-LV-sDE">
+                                                <rect key="frame" x="0.0" y="574" width="984" height="75"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="15"/>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="60"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="4VW-RZ-BwH" firstAttribute="top" relation="lessThanOrEqual" secondItem="0v8-lE-Kda" secondAttribute="bottom" constant="30" id="dT9-7P-uLF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" tag="7777777" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="596-PL-4SP">
+                                        <rect key="frame" x="0.0" y="657" width="984" height="649"/>
+                                        <variation key="heightClass=compact-widthClass=compact" axis="vertical"/>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hib-93-0K6" firstAttribute="leading" secondItem="MT0-0x-uRl" secondAttribute="leading" constant="20" id="6TC-hd-B38"/>
+                            <constraint firstItem="hib-93-0K6" firstAttribute="top" secondItem="9lw-Q1-cfo" secondAttribute="top" constant="20" id="Blv-Jd-9Xh"/>
+                            <constraint firstItem="9lw-Q1-cfo" firstAttribute="trailing" secondItem="hib-93-0K6" secondAttribute="trailing" constant="20" id="a7z-WS-jSU"/>
+                            <constraint firstItem="9lw-Q1-cfo" firstAttribute="bottom" secondItem="hib-93-0K6" secondAttribute="bottom" constant="20" id="meI-cF-7HT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9lw-Q1-cfo"/>
+                    </view>
+                    <connections>
+                        <outlet property="resetButton" destination="4VW-RZ-BwH" id="Ll3-H3-6IR"/>
+                        <outlet property="startButton" destination="0v8-lE-Kda" id="8Aj-Qp-IYg"/>
+                        <outlet property="timeLabel" destination="rcX-LV-sDE" id="UQZ-ug-c41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1q-mI-PZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.875" y="206.25"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="myo-Sz-iox">
+            <objects>
+                <navigationController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="Pon-xN-zso" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J4u-hX-l35">
+                        <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x8D-vC-R5u" kind="relationship" relationship="rootViewController" id="feC-5h-cWO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5g-gK-jr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="-589"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pr3-gf-Tfe"/>
+    </inferredMetricsTieBreakers>
+</document>
