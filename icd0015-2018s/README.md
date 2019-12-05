@@ -3,5 +3,5 @@
 ## Directory contains
  - ASP.NET Core backend
  - Razor pages Frontend
- - Frontend application in Angular
+ - Frontend application in Aurelia
  - Nuget package
