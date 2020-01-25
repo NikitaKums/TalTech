@@ -1,2 +1,2 @@
 # This repository contains projects done during studies in TalTech.
-#### Note: The databases provided in the projects may not be valid anymore.
+#### The databases used in some projects may not be operational at current time as the projects have been done a long time ago and are kept here just for showcase.
